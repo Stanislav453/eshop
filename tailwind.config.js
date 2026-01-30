@@ -1,10 +1,16 @@
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Manrope',], 
+      },
+
+      colors: {
+        'text-neutral-primary': '#333333',
+        'text-neutral-secondary': '#848080'
+      }
+    },
   },
   plugins: [],
-}
+};
