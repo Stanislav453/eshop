@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 export default defineConfig({
   plugins: [
@@ -7,6 +6,5 @@ export default defineConfig({
       target: "react",
       autoCodeSplitting: true,
     }),
-    tailwindcss(),
   ],
 });
