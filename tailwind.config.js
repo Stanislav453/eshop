@@ -9,9 +9,12 @@ export default {
       fontFamily: {
         sans: ["Manrope", "Helvetica", "Arial", "sans-serif"],
       },
+      fontSize: {
+        "icon-sm": "1.3rem",
+      },
       colors: {
-        "text-neutral-primary": "#333333",
-        "text-neutral-secondary": "#848080",
+        "neutral-primary": "#333333",
+        "neutral-secondary": "#848080",
       },
     },
   },
