@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       maxWidth: {
-        xl: "86.25rem",
+        // xl: "86.25rem",
+        xl: "71.25rem",
       },
       fontFamily: {
         sans: ["Manrope", "Helvetica", "Arial", "sans-serif"],
