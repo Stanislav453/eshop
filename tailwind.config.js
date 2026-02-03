@@ -16,6 +16,9 @@ export default {
       colors: {
         "neutral-primary": "#333333",
         "neutral-secondary": "#848080",
+        "neutral-tertiary": "#ffffff",
+        "button-brand-primary": "#333333",
+        "button-brand-primary-hover": "#FC466B",
       },
     },
   },
