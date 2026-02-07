@@ -4,7 +4,7 @@ import { DashboardLayout } from "./DashboardLayout";
 
 export const HeaderTopView = () => {
   return (
-    <header>
+    <div>
       <DashboardLayout>
         <div className="flex gap-5">
           <span className="flex items-center gap-2 text-neutral-secondary">
@@ -41,6 +41,6 @@ export const HeaderTopView = () => {
         </div>
       </DashboardLayout>
       <hr />
-    </header>
+    </div>
   );
 };
