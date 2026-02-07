@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CiInstagram, CiLocationOn } from "react-icons/ci";
-import DashboardLayout from "./DashboardLayout";
+import { DashboardLayout } from "./DashboardLayout";
 
 export const HeaderTopView = () => {
   return (

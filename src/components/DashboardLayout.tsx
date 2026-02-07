@@ -1,14 +1,16 @@
 import React from "react";
 type DashboardLayoutProps = {
+  bg?: string;
   children: React.ReactNode;
 };
 
-const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+export const DashboardLayout = ({ bg, children }: DashboardLayoutProps) => {
   return (
-    <section className="container mx-auto p-2">
-      <div className="max-w-xl flex justify-between mx-auto">{children}</div>
+    <section className={`${bg}`}>
+      <div className="container mx-auto p-2">
+        <div className="max-w-xl flex justify-between mx-auto">{children}</div>
+      </div>
     </section>
   );
 };
 
-export default DashboardLayout;

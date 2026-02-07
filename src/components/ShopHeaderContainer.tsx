@@ -1,8 +1,8 @@
 import { CiHeart, CiSearch, CiShoppingBasket, CiUser } from "react-icons/ci";
-import DashboardLayout from "./DashboardLayout";
 import { Link } from "@tanstack/react-router";
+import { DashboardLayout } from "./DashboardLayout";
 
-const ShopHeaderContainer = () => {
+export const ShopHeaderContainer = () => {
   return (
     <DashboardLayout>
       <div className="flex">
@@ -40,4 +40,3 @@ const ShopHeaderContainer = () => {
   );
 };
 
-export default ShopHeaderContainer;
