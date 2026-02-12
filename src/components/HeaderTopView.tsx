@@ -3,6 +3,7 @@ import { CiInstagram, CiLocationOn } from "react-icons/ci";
 import { DashboardLayout } from "./DashboardLayout";
 
 export const HeaderTopView = () => {
+
   return (
     <div>
       <DashboardLayout>
@@ -44,3 +45,4 @@ export const HeaderTopView = () => {
     </div>
   );
 };
+

@@ -2,7 +2,7 @@ import { CiHeadphones } from "react-icons/ci";
 import { Link } from "@tanstack/react-router";
 import { DashboardLayout } from "./DashboardLayout";
 
-export const NavContainer = () => {
+export const NavView = () => {
   return (
     <DashboardLayout bg="bg-gradient-to-r from-blue-600 to-red-600">
       <div className="flex justify-center items-center ">
