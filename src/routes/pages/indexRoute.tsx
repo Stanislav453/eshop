@@ -6,10 +6,12 @@ export const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
   component: function Index() {
-    return (
-      <main className="text-red-600 p-2">
-        <SliderContainer />
 
+
+
+    return (
+      <main className=" p-2">
+        <SliderContainer />
       </main>
     );
   },

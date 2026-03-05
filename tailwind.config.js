@@ -5,7 +5,7 @@ export default {
     extend: {
       maxWidth: {
         // xl: "86.25rem",
-        xl: "71.25rem",
+        xl: "83.25rem",
       },
       fontFamily: {
         sans: ["Manrope", "Helvetica", "Arial", "sans-serif"],
