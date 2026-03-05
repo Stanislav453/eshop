@@ -7,6 +7,9 @@ export default {
         // xl: "86.25rem",
         xl: "83.25rem",
       },
+      height: {
+        "shop-product-container": "36.0625rem",
+      },
       fontFamily: {
         sans: ["Manrope", "Helvetica", "Arial", "sans-serif"],
       },
@@ -23,7 +26,7 @@ export default {
         "special-primary-hover": "#333333",
         "special-scondary-hover": "#ffffff",
         "button-brand-primary": "#333333",
-        "button-brand-primary-hover": "#FC466B",
+        "primary-hover": "#FC466B",
       },
     },
   },
