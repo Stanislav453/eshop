@@ -1,6 +1,4 @@
-export const toCamelCase = (str: string) => {
-    // console.log("toCamelCase", str);
-    
+export const toCamelCase = (str: string) => {    
     return str
     .toLowerCase()
     .trim()
