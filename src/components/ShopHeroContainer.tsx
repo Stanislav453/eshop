@@ -1,7 +1,7 @@
 import { DashboardLayout } from "./DashboardLayout";
 import { useQuery } from "@tanstack/react-query";
 import { CategoryView } from "./CategoryView";
-import SliderContainer from "./SliderContainer";
+import { SliderContainer } from "./SliderContainer";
 
 export const ShopHeroContainer = () => {
   const { data } = useQuery({

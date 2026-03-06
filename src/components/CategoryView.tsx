@@ -14,7 +14,7 @@ export const CategoryView = ({ data }: CategoryViewProps) => {
   const categoryPanel = isOpen ? "max-h-dvh" : "max-h-0";
 
   return (
-    <div className="flex-initial w-1/4 ">
+    <div className="flex-initial w-1/4">
       <div className="flex justify-between gap-2 items-center w-full p-4 bg-box-brand-color text-neutral-primary font-bold ">
         <span>
           <IoIosMenu className="text-icon-sm" />
