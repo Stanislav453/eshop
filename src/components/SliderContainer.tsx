@@ -1,37 +1,15 @@
-import { DashboardLayout } from "./DashboardLayout";
-import { useQuery } from "@tanstack/react-query";
-import { CategoryView } from "./CategoryView";
+import React from 'react'
 
-export const SliderContainer = () => {
-  const { data } = useQuery({
-    queryKey: ["repoData"],
-    queryFn: () =>
-      fetch("https://696cdbeff4a79b31517ff504.mockapi.io/categories").then(
-        (res) => res.json(),
-      ),
-  });
-
-  if (!data) return null;
-
+const SliderContainer = () => {
   return (
-    <DashboardLayout>
-      <div className="flex gap-8 w-full pt-4">
-        <CategoryView data={data} />
         <div className="flex-initial w-2/4 h-shop-product-container">
           <img
             className="w-full h-full"
-            src="../../public/slider-1.webp"
+            src="../../public/slider/slider-1.webp"
             alt="Slider"
           />
         </div>
-        <div className="flex-initial w-1/4 h-shop-product-container">
-          <img
-            className="w-full h-full"
-            src="../../public/offer-banner.webp"
-            alt="Offer Banner"
-          />
-        </div>
-      </div>
-    </DashboardLayout>
-  );
-};
+  )
+}
+
+export default SliderContainer
