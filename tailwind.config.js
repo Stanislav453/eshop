@@ -1,10 +1,8 @@
-// tailwind.config.js (alebo .ts)
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       maxWidth: {
-        // xl: "86.25rem",
         xl: "83.25rem",
       },
       height: {
