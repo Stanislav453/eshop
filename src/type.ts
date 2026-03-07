@@ -8,6 +8,6 @@ export type ImgLoadType = {
 export type CategoryType = {
   id: string;
   name: string;
-  icon: string;
-  cover: string;
+  iconId: string;
+  bgId: string;
 };

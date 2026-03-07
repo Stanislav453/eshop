@@ -1,9 +1,8 @@
 import type { CategoryType } from "../type";
-import { toCamelCase } from "../utils/toCamelCase";
-import { imgLoad } from "../utils/imgLoad";
 import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
+import { BASE_IMAGE_URL } from "../utils/constants";
 
 type CategoryViewProps = {
   data: CategoryType[];
@@ -30,17 +29,12 @@ export const CategoryView = ({ data }: CategoryViewProps) => {
         className={`border px-2 overflow-hidden transition-all duration-300 ${categoryPanel}`}
       >
         {data?.map((category: CategoryType) => {
-          const { id, name } = category;
+          const { id, name, iconId } = category;
           return (
             <li className="flex py-4 px-2 border-b" key={id}>
               <button className="flex gap-2 font-semibold text-neutral-primary hover:text-primary-hover cursor-pointer transition-colors duration-300">
                 <img
-                  src={imgLoad({
-                    key: toCamelCase(name),
-                    height: "25",
-                    location: "category",
-                    end: "icon",
-                  })}
+                  src={`${BASE_IMAGE_URL}/h_25/${iconId}`}
                   alt={name}
                 />
                 {name}

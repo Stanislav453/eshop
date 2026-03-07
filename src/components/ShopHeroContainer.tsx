@@ -14,6 +14,9 @@ export const ShopHeroContainer = () => {
 
   if (!data) return null;
 
+  console.log(data);
+  
+
   return (
     <DashboardLayout>
       <div className="flex gap-8 w-full pt-4">
