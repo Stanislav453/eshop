@@ -1,12 +1,7 @@
 import { useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-
-const sliderImages = [
-  "../../public/slider/slider-1.webp",
-  "../../public/slider/slider-2.webp",
-  "../../public/slider/slider-3.webp",
-];
+import { SliderImagesView } from "./SliderImagesView";
 
 export const SliderContainer = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -23,18 +18,10 @@ export const SliderContainer = () => {
   }, [emblaApi]);
 
   return (
-
     <div className="embla" dir="rtl">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container h-shop-product-container">
-          {sliderImages.map((image, index) => (
-            <div className="embla__slide" key={index}>
-              <img className="w-full h-full" src={image} alt={`Slide ${index + 1}`} />
-            </div>
-          ))}
-        </div>
+        <SliderImagesView />
       </div>
     </div>
-
   );
 };
