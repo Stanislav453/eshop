@@ -12,7 +12,7 @@ export const SliderImagesView = () => {
                 <span className="capitalize text-neutral-primary ">
                   START FROM
                 </span>
-                <span className="font-bold border-b border-neutral-primary">
+                <span className="font-bold border-b border-neutral-primary ml-2">
                   ${price}
                 </span>
               </p>
