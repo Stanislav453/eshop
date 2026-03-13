@@ -16,6 +16,7 @@ export default {
       },
       colors: {
         "box-brand-color": "#F7F7F7",
+        "paragraph-primary": "#808080",
         "neutral-primary": "#333333",
         "neutral-secondary": "#848080",
         "neutral-tertiary": "#ffffff",

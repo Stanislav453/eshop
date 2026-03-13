@@ -12,10 +12,7 @@ export const ShopHeroContainer = () => {
       ),
   });
 
-  if (!data) return null;
-
-  console.log(data);
-  
+  if (!data) return null;  
 
   return (
     <DashboardLayout>

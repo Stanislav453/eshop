@@ -2,11 +2,13 @@ import type { CategoryType } from "../type";
 import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
-import { BASE_IMAGE_URL } from "../utils/constants";
+import { buildImageUrl } from "../utils/buildImageUrl";
 
 type CategoryViewProps = {
   data: CategoryType[];
 };
+
+// /h_25/
 
 export const CategoryView = ({ data }: CategoryViewProps) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -34,7 +36,10 @@ export const CategoryView = ({ data }: CategoryViewProps) => {
             <li className="flex py-4 px-2 border-b" key={id}>
               <button className="flex gap-2 font-semibold text-neutral-primary hover:text-primary-hover cursor-pointer transition-colors duration-300">
                 <img
-                  src={`${BASE_IMAGE_URL}/h_25/${iconId}`}
+                  src={buildImageUrl({
+                    imageId: iconId,
+                    options: { height: 25 },
+                  })}
                   alt={name}
                 />
                 {name}
