@@ -13,6 +13,7 @@ export const ImageCarousel = ({ emblaRef, data }: ImageCarouselProps) => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container_category">
           {data.map((data, index) => {
+            const { name, bgId } = data;
             return (
               <div className="embla__shop_category " key={index}>
                 <div className="embla__slide__number_category bg-box-brand-color ">
@@ -20,15 +21,13 @@ export const ImageCarousel = ({ emblaRef, data }: ImageCarouselProps) => {
                     <div className="w-[130px] h-[130px] ">
                       <img
                         src={buildImageUrl({
-                          imageId: data.bgId,
+                          imageId: bgId,
                           options: { height: 130 },
                         })}
-                        alt={data.name}
+                        alt={name}
                       />
                     </div>
-                    <h3 className=" pt-3  text-[1.1rem] text-center">
-                      {data.name}
-                    </h3>
+                    <h3 className=" pt-3  text-[1.1rem] text-center">{name}</h3>
                     <p className=" text-[.9rem] text-center text-paragraph-primary font-thin ">
                       10 items
                     </p>
