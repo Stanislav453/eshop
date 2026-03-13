@@ -1,6 +1,6 @@
 import { CiHeadphones } from "react-icons/ci";
 import { Link } from "@tanstack/react-router";
-import { DashboardLayout } from "./DashboardLayout";
+import { DashboardLayout } from "../common/DashboardLayout";
 
 export const NavView = () => {
   return (

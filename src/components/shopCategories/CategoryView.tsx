@@ -1,8 +1,8 @@
-import type { CategoryType } from "../type";
+import type { CategoryType } from "../../type";
 import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
-import { buildImageUrl } from "../utils/buildImageUrl";
+import { buildImageUrl } from "../../utils/buildImageUrl";
 
 type CategoryViewProps = {
   data: CategoryType[];

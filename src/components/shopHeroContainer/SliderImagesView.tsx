@@ -1,4 +1,4 @@
-import { sliderImages } from "../utils/sliderImages";
+import { sliderImages } from "../../utils/sliderImages";
 
 export const SliderImagesView = () => {
   return (

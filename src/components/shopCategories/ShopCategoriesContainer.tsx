@@ -1,5 +1,5 @@
 import useEmblaCarousel from "embla-carousel-react";
-import { DashboardLayout } from "../DashboardLayout";
+import { DashboardLayout } from "../common/DashboardLayout";
 import { ImageCarousel } from "./ImageCarousel";
 import { NextButtonView } from "./NextButtonView";
 import { PrevButtonView } from "./PrewButtonView";

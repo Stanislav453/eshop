@@ -1,9 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { CiInstagram, CiLocationOn } from "react-icons/ci";
-import { DashboardLayout } from "./DashboardLayout";
+import { DashboardLayout } from "../common/DashboardLayout";
 
 export const HeaderTopView = () => {
-
   return (
     <div>
       <DashboardLayout>
@@ -45,4 +44,3 @@ export const HeaderTopView = () => {
     </div>
   );
 };
-

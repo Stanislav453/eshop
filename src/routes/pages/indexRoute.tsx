@@ -1,6 +1,6 @@
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../rootRoute";
-import { ShopHeroContainer } from "../../components/ShopHeroContainer";
+import { ShopHeroContainer } from "../../components/shopHeroContainer/ShopHeroContainer";
 import { ShopCategoriesContainer } from "../../components/shopCategories/ShopCategoriesContainer";
 
 export const indexRoute = createRoute({

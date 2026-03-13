@@ -1,6 +1,6 @@
-import { DashboardLayout } from "./DashboardLayout";
+import { DashboardLayout } from "../common/DashboardLayout";
 import { useQuery } from "@tanstack/react-query";
-import { CategoryView } from "./CategoryView";
+import { CategoryView } from "../shopCategories/CategoryView";
 import { SliderContainer } from "./SliderContainer";
 
 export const ShopHeroContainer = () => {
@@ -12,7 +12,7 @@ export const ShopHeroContainer = () => {
       ),
   });
 
-  if (!data) return null;  
+  if (!data) return null;
 
   return (
     <DashboardLayout>
