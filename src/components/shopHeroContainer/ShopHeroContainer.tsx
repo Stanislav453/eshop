@@ -15,7 +15,7 @@ export const ShopHeroContainer = () => {
   if (!data) return null;
 
   return (
-    <DashboardLayout>
+    <DashboardLayout direction="flex-row">
       <div className="flex gap-8 w-full pt-4">
         <CategoryView data={data} />
         <SliderContainer />

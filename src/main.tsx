@@ -5,7 +5,7 @@ import "./index.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./queryClient";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { router } from "./createRoute";
+import { router } from "./routes/createRoute";
 
 const rootElement = document.getElementById("root")!;
 if (!rootElement.innerHTML) {

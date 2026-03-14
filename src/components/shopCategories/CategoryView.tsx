@@ -2,7 +2,7 @@ import type { CategoryType } from "../../type";
 import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
-import { buildImageUrl } from "../../utils/buildImageUrl";
+import { CategoryItem } from "./CategoryItemView";
 
 type CategoryViewProps = {
   data: CategoryType[];
@@ -10,7 +10,6 @@ type CategoryViewProps = {
 
 export const CategoryView = ({ data }: CategoryViewProps) => {
   const [isOpen, setIsOpen] = useState(true);
-  const categoryPanel = isOpen ? "max-h-dvh" : "max-h-0";
 
   return (
     <div className="flex-initial w-1/4">
@@ -25,27 +24,7 @@ export const CategoryView = ({ data }: CategoryViewProps) => {
           />
         </button>
       </div>
-      <ul
-        className={`border px-2 overflow-hidden transition-all duration-300 ${categoryPanel}`}
-      >
-        {data?.map((category: CategoryType) => {
-          const { id, name, iconId } = category;
-          return (
-            <li className="flex py-4 px-2 border-b" key={id}>
-              <button className="flex gap-2 font-semibold text-neutral-primary hover:text-primary-hover cursor-pointer transition-colors duration-300">
-                <img
-                  src={buildImageUrl({
-                    imageId: iconId,
-                    options: { height: 25 },
-                  })}
-                  alt={name}
-                />
-                {name}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      <CategoryItem data={data} isOpen={isOpen} />
     </div>
   );
 };

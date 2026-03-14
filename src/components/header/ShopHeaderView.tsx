@@ -4,7 +4,7 @@ import { DashboardLayout } from "../common/DashboardLayout";
 
 export const ShopHeaderView = () => {
   return (
-    <DashboardLayout>
+    <DashboardLayout direction="flex-row">
       <div className="flex">
         <input
           type="search"

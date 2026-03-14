@@ -4,8 +4,8 @@ import { DashboardLayout } from "../common/DashboardLayout";
 
 export const HeaderTopView = () => {
   return (
-    <div>
-      <DashboardLayout>
+    <section>
+      <DashboardLayout direction="flex-row">
         <div className="flex gap-5">
           <span className="flex items-center gap-2 text-neutral-secondary">
             <CiLocationOn className="text-icon-sm" />
@@ -41,6 +41,6 @@ export const HeaderTopView = () => {
         </div>
       </DashboardLayout>
       <hr />
-    </div>
+    </section>
   );
 };
