@@ -5,6 +5,7 @@ import { NextButtonView } from "./NextButtonView";
 import { PrevButtonView } from "./PrewButtonView";
 import { usePrevNextButtons } from "./useCarouselNavigation";
 import { useQuery } from "@tanstack/react-query";
+import { AdvertisingBannersContainer } from "./AdvertisingBannersContainer";
 
 export const ShopCategoriesContainer = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -54,6 +55,7 @@ export const ShopCategoriesContainer = () => {
           </div>
         </div>
         <ImageCarousel data={data} emblaRef={emblaRef} />
+        <AdvertisingBannersContainer />
       </div>
     </DashboardLayout>
   );

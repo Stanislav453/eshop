@@ -7,6 +7,7 @@ export default {
       },
       height: {
         "shop-product-container": "36.0625rem",
+        "baners": "630px",
       },
       fontFamily: {
         sans: ["Manrope", "Helvetica", "Arial", "sans-serif"],

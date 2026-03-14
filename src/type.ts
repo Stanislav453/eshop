@@ -27,3 +27,8 @@ export type BuildImageUrlType = {
   imageId: string;
   options?: { height: 25 | 50 | 90 | 130 | 150 };
 };
+
+export type AdvertisingBannersType = {
+  text: string;
+  src: string;
+};

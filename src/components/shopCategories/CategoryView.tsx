@@ -8,8 +8,6 @@ type CategoryViewProps = {
   data: CategoryType[];
 };
 
-// /h_25/
-
 export const CategoryView = ({ data }: CategoryViewProps) => {
   const [isOpen, setIsOpen] = useState(true);
   const categoryPanel = isOpen ? "max-h-dvh" : "max-h-0";
