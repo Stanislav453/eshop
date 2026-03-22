@@ -6,12 +6,12 @@ import { NavView } from "../components/header/NavView";
 
 export const rootRoute = createRootRoute({
   component: () => (
-    <body>
+    <div>
       <HeaderTopView />
       <ShopHeaderView />
       <NavView />
       <Outlet />
       <TanStackRouterDevtools />
-    </body>
+    </div>
   ),
 });
