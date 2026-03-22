@@ -4,7 +4,7 @@ import { DashboardLayout } from "../common/DashboardLayout";
 
 export const ShopHeaderView = () => {
   return (
-    <DashboardLayout direction="flex-row">
+    <DashboardLayout direction="flex-row" childrenClassName="justify-between">
       <div className="flex">
         <input
           type="search"

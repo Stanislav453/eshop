@@ -5,7 +5,7 @@ import { DashboardLayout } from "../common/DashboardLayout";
 export const HeaderTopView = () => {
   return (
     <section>
-      <DashboardLayout direction="flex-row">
+      <DashboardLayout direction="flex-row" childrenClassName="justify-between">
         <div className="flex gap-5">
           <span className="flex items-center gap-2 text-neutral-secondary">
             <CiLocationOn className="text-icon-sm" />
