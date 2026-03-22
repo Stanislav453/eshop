@@ -32,3 +32,7 @@ export type AdvertisingBannersType = {
   text: string;
   src: string;
 };
+
+export type UseGetDataType = {
+    endpoint: "categories" | "products"
+}
