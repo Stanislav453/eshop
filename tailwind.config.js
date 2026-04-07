@@ -5,15 +5,21 @@ export default {
       maxWidth: {
         xl: "83.25rem",
       },
+      width: {
+        "our-product": "18.4375rem",
+        "our-product-img-container": "12.5rem",
+      },
       height: {
         "shop-product-container": "36.0625rem",
-        "baners": "630px",
+        "our-product-img-container": "12.5rem",
+        baners: "630px",
       },
       fontFamily: {
         sans: ["Manrope", "Helvetica", "Arial", "sans-serif"],
       },
       fontSize: {
         "icon-sm": "1.3rem",
+        "section-title": "2rem",
       },
       colors: {
         "box-brand-color": "#F7F7F7",

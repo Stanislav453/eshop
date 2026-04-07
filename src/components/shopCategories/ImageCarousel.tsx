@@ -1,13 +1,31 @@
 import type { EmblaRootNodeRefType } from "embla-carousel-react";
 import { buildImageUrl } from "../../utils/buildImageUrl";
 import type { CategoryType } from "../../type";
+import { LoadingSpiner } from "../common/LoadingSpiner";
+import { ErrorActive } from "../common/ErrorActive";
 
 type ImageCarouselProps = {
   emblaRef: EmblaRootNodeRefType;
   data: CategoryType[];
+  isError: boolean;
+  isPending: boolean;
+  error: Error | null;
 };
 
-export const ImageCarousel = ({ emblaRef, data }: ImageCarouselProps) => {
+export const ImageCarousel = ({
+  emblaRef,
+  data,
+  isError,
+  isPending,
+  error,
+}: ImageCarouselProps) => {
+  if (isPending) return <LoadingSpiner />;
+
+  if (isError)
+    return ErrorActive({
+      error: error,
+    });
+
   return (
     <section className="embla__shop_category_controls">
       <div className="embla__viewport" ref={emblaRef}>

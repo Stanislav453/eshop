@@ -1,10 +1,60 @@
 import type { ComponentPropsWithRef } from "react";
 
+type CommentType = {
+  createdAt: string;
+  nickNAME: string;
+  comment: string;
+  id: string;
+  productId: string;
+};
+
+export enum CategoryOptions {
+  DSLRcamera = "DSLR cmaera",
+  Mouse = "Mouse",
+  TVscreen = "TV screen",
+  Computer = "Computer",
+  Pendrive = "Pendrive",
+  Headphones = "Headphones",
+  Gameboy = "Gameboy",
+  Printer = "Printer",
+  Radio = "Radio",
+}
+
+export enum FilterSlugOptions {
+  DSLRcamera = "dslr-camera",
+  Mouse = "mouse",
+  TVscreen = "tv-screen",
+  Computer = "computer",
+  Pendrive = "pendrive",
+  Headphones = "headphones",
+  Gameboy = "gameboy",
+  Printer = "printer",
+  Radio = "radio",
+}
+
 export type ImgLoadType = {
   key: string;
   height?: "100" | "25";
   location: "category" | "product";
   end: "icon" | "cover";
+};
+
+export type ProductType = {
+  id: string;
+  title: string;
+  price: number;
+  images: string[];
+  rating: number;
+  thumbnail: string;
+  discount: number;
+  specialOfferStart: string;
+  specialOfferEnd: string;
+  brand: string;
+  description: string;
+  category: CategoryOptions;
+  sku: string;
+  availability: boolean;
+  comments: CommentType[];
 };
 
 export type CategoryType = {
@@ -34,5 +84,21 @@ export type AdvertisingBannersType = {
 };
 
 export type UseGetDataType = {
-    endpoint: "categories" | "products"
-}
+  endpoint: "categories" | "products";
+};
+
+export type FilterValue = FilterSlugOptions;
+
+export type UseFilterDataType = {
+  filterValue: FilterSlugOptions;
+};
+
+export type FilterCategoryType = {
+  title: CategoryOptions;
+  slug: FilterSlugOptions;
+};
+
+export type CreateImageUrlType = {
+  url: string;
+  height: 400;
+};

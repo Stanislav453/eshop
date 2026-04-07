@@ -2,6 +2,7 @@ import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../rootRoute";
 import { ShopHeroContainer } from "../../components/shopHeroContainer/ShopHeroContainer";
 import { ShopCategoriesContainer } from "../../components/shopCategories/ShopCategoriesContainer";
+import { OurProductsContainer } from "../../components/ourProducts/OurProductsContainer";
 
 export const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -11,6 +12,7 @@ export const indexRoute = createRoute({
       <main className=" p-2">
         <ShopHeroContainer />
         <ShopCategoriesContainer />
+        <OurProductsContainer />
       </main>
     );
   },

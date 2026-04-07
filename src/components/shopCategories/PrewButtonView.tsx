@@ -5,6 +5,7 @@ export const PrevButtonView = (props: PropType) => {
 
   return (
     <button
+   
       className={"embla__button embla__button--prev".concat(
         disabled ? " embla__button--disabled" : "",
       )}

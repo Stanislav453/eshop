@@ -6,6 +6,7 @@ type ShopCategoriesHeaderType = {
   onNextButtonClick: () => void;
   prevBtnDisabled: boolean;
   nextBtnDisabled: boolean;
+  // error: Error | null
 };
 
 export const ShopCategoriesHeader = ({
@@ -13,10 +14,11 @@ export const ShopCategoriesHeader = ({
   onNextButtonClick,
   prevBtnDisabled,
   nextBtnDisabled,
+  // error
 }: ShopCategoriesHeaderType) => {
   return (
     <div className="flex items-center justify-between mb-8">
-      <h2 className="text-[2rem] font-bold text-neutral-primary">
+      <h2 className="text-section-title font-bold text-neutral-primary">
         Shop categories
       </h2>
       <div className="flex items-cente">

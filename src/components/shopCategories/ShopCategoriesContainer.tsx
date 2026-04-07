@@ -2,9 +2,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { DashboardLayout } from "../common/DashboardLayout";
 import { ImageCarousel } from "./ImageCarousel";
 import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
-import { useQuery } from "@tanstack/react-query";
 import { AdvertisingBannersContainer } from "./AdvertisingBannersContainer";
 import { ShopCategoriesHeader } from "./ShopCategoriesHeader";
+import { useGetData } from "../../hooks/useGetData";
 
 export const ShopCategoriesContainer = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -14,12 +14,8 @@ export const ShopCategoriesContainer = () => {
     dragFree: false,
   });
 
-  const { data } = useQuery({
-    queryKey: ["repoData"],
-    queryFn: () =>
-      fetch("https://696cdbeff4a79b31517ff504.mockapi.io/categories").then(
-        (res) => res.json(),
-      ),
+  const { data, isError, isPending, error } = useGetData({
+    endpoint: "categories",
   });
 
   const {
@@ -29,17 +25,22 @@ export const ShopCategoriesContainer = () => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  if (!data) return null;
 
   return (
-    <DashboardLayout className="mt-24" direction="flex-col">
+    <DashboardLayout sectionClassName="mt-24" direction="flex-col">
       <ShopCategoriesHeader
         onPrevButtonClick={onPrevButtonClick}
         onNextButtonClick={onNextButtonClick}
         prevBtnDisabled={prevBtnDisabled}
         nextBtnDisabled={nextBtnDisabled}
       />
-      <ImageCarousel data={data} emblaRef={emblaRef} />
+      <ImageCarousel
+        isError={isError}
+        isPending={isPending}
+        data={data}
+        emblaRef={emblaRef}
+        error={error}
+      />
       <AdvertisingBannersContainer />
     </DashboardLayout>
   );
