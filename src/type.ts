@@ -100,5 +100,5 @@ export type FilterCategoryType = {
 
 export type CreateImageUrlType = {
   url: string;
-  height: 400;
+  height: 400 | 130;
 };

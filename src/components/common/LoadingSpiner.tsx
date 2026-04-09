@@ -4,7 +4,6 @@ import { DashboardLayout } from "./DashboardLayout";
 export const LoadingSpiner = () => {
   return (
     <DashboardLayout direction="flex-row" childrenClassName="justify-center">
-
       <CircularProgress
         height="50"
         width="50"

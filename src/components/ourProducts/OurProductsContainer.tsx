@@ -3,7 +3,7 @@ import { FilterSlugOptions, type FilterValue } from "../../type";
 import { DashboardLayout } from "../common/DashboardLayout";
 import { useFilterData } from "../../hooks/useFilterData";
 import { ErrorActive } from "../common/ErrorActive";
-import OurProductsItems from "./OurProductsItems";
+import { OurProductsItems } from "./OurProductsItems";
 import { OurProductsCategory } from "./OurProductsCategory";
 
 export const OurProductsContainer = () => {
@@ -13,20 +13,18 @@ export const OurProductsContainer = () => {
     filterValue: slug,
   });
 
-    console.log("slug", slug);
-    
-  
   if (isError)
     return ErrorActive({
       error: error,
     });
+
   return (
     <DashboardLayout direction="flex-col" sectionClassName="py-14">
-        <h2 className="text-section-title font-bold text-neutral-primary">
-          Our products
-        </h2>
-        <OurProductsCategory setSlug={setSlug} />
-        <OurProductsItems data={data} isPending={isPending} />
+      <h2 className="text-section-title font-bold text-neutral-primary">
+        Our products
+      </h2>
+      <OurProductsCategory setSlug={setSlug} />
+      <OurProductsItems data={data} isPending={isPending} />
     </DashboardLayout>
   );
 };

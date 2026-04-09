@@ -1,8 +1,8 @@
 import type { EmblaRootNodeRefType } from "embla-carousel-react";
-import { buildImageUrl } from "../../utils/buildImageUrl";
 import type { CategoryType } from "../../type";
 import { LoadingSpiner } from "../common/LoadingSpiner";
 import { ErrorActive } from "../common/ErrorActive";
+import { createImageUrl } from "../../utils/createImageUrl";
 
 type ImageCarouselProps = {
   emblaRef: EmblaRootNodeRefType;
@@ -38,9 +38,9 @@ export const ImageCarousel = ({
                   <div>
                     <div className="w-[130px] h-[130px] ">
                       <img
-                        src={buildImageUrl({
-                          imageId: bgId,
-                          options: { height: 130 },
+                        src={createImageUrl({
+                          url: bgId,
+                          height: 130,
                         })}
                         alt={name}
                       />

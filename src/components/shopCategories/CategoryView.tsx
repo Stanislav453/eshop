@@ -1,14 +1,10 @@
-import type { CategoryType } from "../../type";
 import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
 import { CategoryItem } from "./CategoryItemView";
 
-type CategoryViewProps = {
-  data: CategoryType[];
-};
 
-export const CategoryView = ({ data }: CategoryViewProps) => {
+export const CategoryView = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -24,7 +20,7 @@ export const CategoryView = ({ data }: CategoryViewProps) => {
           />
         </button>
       </div>
-      <CategoryItem data={data} isOpen={isOpen} />
+      <CategoryItem isOpen={isOpen} />
     </div>
   );
 };
