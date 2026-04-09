@@ -1,6 +1,6 @@
 import type { ProductType } from "../../type";
 import { LoadingSpiner } from "../common/LoadingSpiner";
-import { OurProductsItemView } from "./OurProductsitemView";
+import { OurProductsItemView } from "./OurProductsItemView";
 
 type OurProductsItemsType = {
   data: ProductType[];
