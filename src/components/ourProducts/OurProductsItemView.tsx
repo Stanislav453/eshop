@@ -1,19 +1,8 @@
+import type { OurProductsitemView } from "../../type";
 import { createImageUrl } from "../../utils/createImageUrl";
 import { OurProductActionButtons } from "./OurProductActionButtons";
 import { RatingContainer } from "./RatingContainer";
 
-type OurProductsitemView = {
-  id: string;
-  thumbnail: string;
-  title: string;
-  price: number;
-  discount: number;
-  rating: number;
-  category: string;
-  discountedPrice: number;
-  priceStyle: string;
-  hoverImage: string;
-};
 
 export const OurProductsItemView = ({
   id,

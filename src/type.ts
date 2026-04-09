@@ -102,3 +102,16 @@ export type CreateImageUrlType = {
   url: string;
   height: 400 | 130;
 };
+
+export type OurProductsitemView = {
+  id: string;
+  thumbnail: string;
+  title: string;
+  price: number;
+  discount: number;
+  rating: number;
+  category: string;
+  discountedPrice: number;
+  priceStyle: string;
+  hoverImage: string;
+};
