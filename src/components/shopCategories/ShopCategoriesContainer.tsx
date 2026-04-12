@@ -5,6 +5,8 @@ import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
 import { AdvertisingBannersContainer } from "./AdvertisingBannersContainer";
 import { ShopCategoriesHeader } from "./ShopCategoriesHeader";
 import { useGetData } from "../../hooks/useGetData";
+import type { CategoryType } from "../../type";
+import { ErrorActive } from "../common/ErrorActive";
 
 export const ShopCategoriesContainer = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -14,7 +16,7 @@ export const ShopCategoriesContainer = () => {
     dragFree: false,
   });
 
-  const { data, isError, isPending, error } = useGetData({
+  const { data, isError, isPending, error } = useGetData<CategoryType[]>({
     endpoint: "categories",
   });
 
@@ -24,7 +26,12 @@ export const ShopCategoriesContainer = () => {
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
+  
 
+  if (data === undefined)
+    return ErrorActive({
+      error: error,
+    });
 
   return (
     <DashboardLayout sectionClassName="mt-24" direction="flex-col">
