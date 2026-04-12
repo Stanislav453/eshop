@@ -1,6 +1,6 @@
 import type { ProductsViewType } from "../../type";
 import { createImageUrl } from "../../utils/createImageUrl";
-import { OurProductActionButtons } from "../ourProducts/OurProductActionButtons";
+import { ProductButtons } from "./ProductButtons";
 import { RatingContainer } from "../ourProducts/RatingContainer";
 import { CountDown } from "../specialOffers/CountDown";
 
@@ -67,7 +67,7 @@ export const ProductsView = ({
           </p>
         </div>
       </div>
-      <OurProductActionButtons />
+      <ProductButtons />
     </li>
   );
 };

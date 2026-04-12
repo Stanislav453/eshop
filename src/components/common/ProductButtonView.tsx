@@ -1,11 +1,11 @@
 import React from "react";
 
-type OurProductButtonType = {
+type ProductButtonViewType = {
   title: string;
   icon: React.ElementType;
 };
 
-export const OurProductButton = ({ title, icon }: OurProductButtonType) => {
+export const ProductButtonView = ({ title, icon }: ProductButtonViewType) => {
   const Icon = icon;
   return (
     <button

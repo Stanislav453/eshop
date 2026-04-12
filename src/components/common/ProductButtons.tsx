@@ -1,17 +1,17 @@
-import { OurProductButton } from "./OurProductButton";
+import { ProductButtonView } from "./ProductButtonView";
 import { CiHeart, CiRead, CiShoppingCart } from "react-icons/ci";
 
-export const OurProductActionButtons = () => {
+export const ProductButtons = () => {
   return (
     <ul className="flex w-full justify-between border-t">
       <li className="flex-1 w-full ">
-        <OurProductButton title="WISHLIST" icon={CiHeart} />
+        <ProductButtonView title="WISHLIST" icon={CiHeart} />
       </li>
       <li className="flex-1 w-full  border-x">
-        <OurProductButton title="ADD TO CART" icon={CiShoppingCart} />
+        <ProductButtonView title="ADD TO CART" icon={CiShoppingCart} />
       </li>
       <li className="flex-1 w-full">
-        <OurProductButton title="QUICKVIEW" icon={CiRead} />
+        <ProductButtonView title="QUICKVIEW" icon={CiRead} />
       </li>
     </ul>
   );
