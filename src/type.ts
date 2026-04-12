@@ -47,7 +47,6 @@ export type ProductType = {
   rating: number;
   thumbnail: string;
   discount: number;
-  specialOfferStart: number;
   specialOfferEnd: number;
   brand: string;
   description: string;
