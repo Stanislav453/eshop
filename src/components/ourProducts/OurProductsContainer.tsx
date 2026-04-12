@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { FilterSlugOptions, type FilterValue, type ProductType } from "../../type";
+import {
+  FilterSlugOptions,
+  type FilterValue,
+  type ProductType,
+} from "../../type";
 import { DashboardLayout } from "../common/DashboardLayout";
 import { useFilterData } from "../../hooks/useFilterData";
 import { ErrorActive } from "../common/ErrorActive";
-import { OurProductsItems } from "./OurProductsItems";
 import { OurProductsCategory } from "./OurProductsCategory";
+import { ProductsContainer } from "../common/ProductsContainer";
 
 export const OurProductsContainer = () => {
   const [slug, setSlug] = useState<FilterValue>(FilterSlugOptions.DSLRcamera);
@@ -24,7 +28,7 @@ export const OurProductsContainer = () => {
         Our products
       </h2>
       <OurProductsCategory setSlug={setSlug} />
-      <OurProductsItems data={data} isPending={isPending} />
+      <ProductsContainer data={data} isPending={isPending} />
     </DashboardLayout>
   );
 };

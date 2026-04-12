@@ -1,19 +1,24 @@
 import type { ProductType } from "../../type";
-import { LoadingSpiner } from "../common/LoadingSpiner";
-import { OurProductsItemView } from "./OurProductsItemView";
+import { LoadingSpiner } from "./LoadingSpiner";
+import { ProductsView } from "./ProductsView";
 
-type OurProductsItemsType = {
+type ProductsContainerType = {
   data: ProductType[];
   isPending: boolean;
+  getCountdown?: (product: ProductType) => string;
 };
 
-export const OurProductsItems = ({ data, isPending }: OurProductsItemsType) => {
+export const ProductsContainer = ({
+  data,
+  isPending,
+  getCountdown,
+}: ProductsContainerType) => {
   if (isPending) {
     return <LoadingSpiner />;
   }
 
   return (
-    <ul className="grid grid-cols-4 gap-8">
+    <ul className="w-full grid grid-cols-4 gap-8">
       {data.map((product: ProductType) => {
         const {
           id,
@@ -26,6 +31,8 @@ export const OurProductsItems = ({ data, isPending }: OurProductsItemsType) => {
           images,
         } = product;
 
+        const countdown = getCountdown ? getCountdown(product) : null;
+
         const discountedPrice = price - discount;
         const priceStyle =
           discount > 0
@@ -33,7 +40,7 @@ export const OurProductsItems = ({ data, isPending }: OurProductsItemsType) => {
             : "font-semibold";
 
         return (
-          <OurProductsItemView
+          <ProductsView
             id={id}
             thumbnail={thumbnail}
             title={title}
@@ -44,6 +51,7 @@ export const OurProductsItems = ({ data, isPending }: OurProductsItemsType) => {
             hoverImage={images[1]}
             discountedPrice={discountedPrice}
             priceStyle={priceStyle}
+            countdown={countdown}
           />
         );
       })}

@@ -4,6 +4,7 @@ import { ShopHeroContainer } from "../../components/shopHeroContainer/ShopHeroCo
 import { ShopCategoriesContainer } from "../../components/shopCategories/ShopCategoriesContainer";
 import { OurProductsContainer } from "../../components/ourProducts/OurProductsContainer";
 import { OfferBanner } from "../../components/offerBanner/OfferBanner";
+import { SpecialOffersContainer } from "../../components/specialOffers/SpecialOffersContainer";
 
 export const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -15,6 +16,7 @@ export const indexRoute = createRoute({
         <ShopCategoriesContainer />
         <OurProductsContainer />
         <OfferBanner />
+        <SpecialOffersContainer />
       </main>
     );
   },

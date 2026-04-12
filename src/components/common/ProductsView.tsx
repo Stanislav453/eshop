@@ -1,10 +1,9 @@
-import type { OurProductsitemView } from "../../type";
+import type { ProductsViewType } from "../../type";
 import { createImageUrl } from "../../utils/createImageUrl";
-import { OurProductActionButtons } from "./OurProductActionButtons";
-import { RatingContainer } from "./RatingContainer";
+import { OurProductActionButtons } from "../ourProducts/OurProductActionButtons";
+import { RatingContainer } from "../ourProducts/RatingContainer";
 
-
-export const OurProductsItemView = ({
+export const ProductsView = ({
   id,
   thumbnail,
   title,
@@ -15,7 +14,8 @@ export const OurProductsItemView = ({
   discountedPrice,
   priceStyle,
   hoverImage,
-}: OurProductsitemView) => {
+  countdown,
+}: ProductsViewType) => {
   return (
     <li className="w-full border" key={id}>
       <div className="flex items-center flex-col py-8 group">
@@ -45,6 +45,9 @@ export const OurProductsItemView = ({
           />
         </a>
         <div className="py-5 text-center">
+          <div>
+            {countdown && <p className="pt-2 text-sm">time: {countdown}</p>}
+          </div>
           <RatingContainer rating={rating} />
           <p className="uppercase text-sm text-paragraph-primary pt-1">
             {category}

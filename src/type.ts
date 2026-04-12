@@ -47,8 +47,8 @@ export type ProductType = {
   rating: number;
   thumbnail: string;
   discount: number;
-  specialOfferStart: string;
-  specialOfferEnd: string;
+  specialOfferStart: number;
+  specialOfferEnd: number;
   brand: string;
   description: string;
   category: CategoryOptions;
@@ -60,7 +60,6 @@ export type ProductType = {
 export type CategoryType = {
   id: string;
   name: string;
-  iconId: string;
   bgId: string;
 };
 
@@ -81,6 +80,7 @@ export type BuildImageUrlType = {
 export type AdvertisingBannersType = {
   text: string;
   src: string;
+  key: number;
 };
 
 export type UseGetDataType = {
@@ -103,7 +103,7 @@ export type CreateImageUrlType = {
   height: 400 | 130;
 };
 
-export type OurProductsitemView = {
+export type ProductsViewType = {
   id: string;
   thumbnail: string;
   title: string;
@@ -114,4 +114,5 @@ export type OurProductsitemView = {
   discountedPrice: number;
   priceStyle: string;
   hoverImage: string;
+  countdown: string | null;
 };
