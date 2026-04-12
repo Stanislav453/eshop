@@ -4,11 +4,11 @@ import axios from "axios";
 import type { UseGetDataType } from "../type";
 
 
-export const useGetData = ({ endpoint }: UseGetDataType) => {
+export const useGetData = <T,>({ endpoint }: UseGetDataType) => {
   return useQuery({
     queryKey: [endpoint],
-    queryFn: async () =>{
-      const { data } = await axios.get(`${API_URL}/${endpoint}`)
+    queryFn: async ():Promise<T>  =>{
+      const { data } = await axios.get<T>(`${API_URL}/${endpoint}`)
       return data
     }
   });
