@@ -28,9 +28,7 @@ export const SpecialOffersContainer = () => {
       <ProductsContainer
         data={specialOffers}
         isPending={isPending}
-        getCountdown={(product) =>
-          offersTime(now, product.specialOfferStart, product.specialOfferEnd)
-        }
+        getCountdown={(product) => offersTime(now, product.specialOfferEnd)}
       />
     </DashboardLayout>
   );

@@ -44,16 +44,34 @@ export const ProductsView = ({
             alt={title}
           />
         </a>
-        <div className="py-5 text-center">
-          <div>
-            {countdown && <p className="pt-2 text-sm">time: {countdown}</p>}
-          </div>
+        <div className="w-full flex flex-col items-center py-5">
+          {countdown && (
+            <ul className="w-full flex justify-between px-6 mb-6">
+              <li className="flex flex-col items-center justify-center p-3 bg-box-brand-color border ">
+                <span className="font-bold text-xl text-center">{countdown.d}</span>
+                <span className="text-sm text-paragraph-primary">DAY</span>
+              </li>
+              <li className="flex flex-col p-3 bg-box-brand-color border ">
+                <span className="font-bold text-xl text-center">{countdown.h}</span>
+                <span className="text-sm text-paragraph-primary">HOUR</span>
+              </li>
+              <li className="flex flex-col p-3 bg-box-brand-color border ">
+                <span className="font-bold text-xl">{countdown.m}</span>
+                <span className="text-sm text-paragraph-primary">MIN</span>
+              </li>
+              <li className="flex flex-col p-3 bg-box-brand-color border ">
+                <span className="font-bold text-xl">{countdown.s}</span>
+                <span className="text-sm text-paragraph-primary">SEC</span>
+              </li>
+            </ul>
+          )}
+
           <RatingContainer rating={rating} />
           <p className="uppercase text-sm text-paragraph-primary pt-1">
             {category}
           </p>
           <a
-            className="block font-semibold truncate max-w-[150px] pt-1  hover:text-primary-hover cursor-pointer transition-colors duration-300"
+            className="block font-semibold truncate max-w-[150px] pt-1 text-center  hover:text-primary-hover cursor-pointer transition-colors duration-300"
             href="#"
           >
             {title}

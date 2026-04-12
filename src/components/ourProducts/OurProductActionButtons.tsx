@@ -7,7 +7,7 @@ export const OurProductActionButtons = () => {
       <li className="flex-1 w-full ">
         <OurProductButton title="WISHLIST" icon={CiHeart} />
       </li>
-      <li className="flex-1 w-full  ">
+      <li className="flex-1 w-full  border-x">
         <OurProductButton title="ADD TO CART" icon={CiShoppingCart} />
       </li>
       <li className="flex-1 w-full">

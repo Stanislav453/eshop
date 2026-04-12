@@ -114,5 +114,5 @@ export type ProductsViewType = {
   discountedPrice: number;
   priceStyle: string;
   hoverImage: string;
-  countdown: string | null;
+  countdown: { d: number; h: string; m: string; s: string } | null;
 };

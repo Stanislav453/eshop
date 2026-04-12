@@ -1,7 +1,5 @@
 
-  export const offersTime = (now: number, start: number, end: number) => {
-    if (now < start) return "Not started";
-    if (now >= end) return "Expired";
+  export const offersTime = (now: number , end: number) => {
 
     const remaining = end - now;
 
@@ -12,5 +10,6 @@
 
     const pad = (n: number) => String(n).padStart(2, "0");
 
-    return `${days}d : ${pad(hours)}h : ${pad(minutes)}m : ${pad(seconds)}s`;
+        return {d: days, h: pad(hours), m: pad(minutes), s: pad(seconds)};
+
   };

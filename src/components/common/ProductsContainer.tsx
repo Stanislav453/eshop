@@ -5,7 +5,9 @@ import { ProductsView } from "./ProductsView";
 type ProductsContainerType = {
   data: ProductType[];
   isPending: boolean;
-  getCountdown?: (product: ProductType) => string;
+  getCountdown?: (
+    product: ProductType,
+  ) => { d: number; h: string; m: string; s: string } | null;
 };
 
 export const ProductsContainer = ({
