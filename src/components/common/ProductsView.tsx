@@ -2,6 +2,7 @@ import type { ProductsViewType } from "../../type";
 import { createImageUrl } from "../../utils/createImageUrl";
 import { OurProductActionButtons } from "../ourProducts/OurProductActionButtons";
 import { RatingContainer } from "../ourProducts/RatingContainer";
+import { CountDown } from "../specialOffers/CountDown";
 
 export const ProductsView = ({
   id,
@@ -45,27 +46,7 @@ export const ProductsView = ({
           />
         </a>
         <div className="w-full flex flex-col items-center py-5">
-          {countdown && (
-            <ul className="w-full flex justify-between px-6 mb-6">
-              <li className="flex flex-col items-center justify-center p-3 bg-box-brand-color border ">
-                <span className="font-bold text-xl text-center">{countdown.d}</span>
-                <span className="text-sm text-paragraph-primary">DAY</span>
-              </li>
-              <li className="flex flex-col p-3 bg-box-brand-color border ">
-                <span className="font-bold text-xl text-center">{countdown.h}</span>
-                <span className="text-sm text-paragraph-primary">HOUR</span>
-              </li>
-              <li className="flex flex-col p-3 bg-box-brand-color border ">
-                <span className="font-bold text-xl">{countdown.m}</span>
-                <span className="text-sm text-paragraph-primary">MIN</span>
-              </li>
-              <li className="flex flex-col p-3 bg-box-brand-color border ">
-                <span className="font-bold text-xl">{countdown.s}</span>
-                <span className="text-sm text-paragraph-primary">SEC</span>
-              </li>
-            </ul>
-          )}
-
+          {countdown && <CountDown countdown={countdown} />}
           <RatingContainer rating={rating} />
           <p className="uppercase text-sm text-paragraph-primary pt-1">
             {category}
