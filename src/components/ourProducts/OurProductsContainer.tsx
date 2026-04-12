@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FilterSlugOptions, type FilterValue } from "../../type";
+import { FilterSlugOptions, type FilterValue, type ProductType } from "../../type";
 import { DashboardLayout } from "../common/DashboardLayout";
 import { useFilterData } from "../../hooks/useFilterData";
 import { ErrorActive } from "../common/ErrorActive";
@@ -9,11 +9,11 @@ import { OurProductsCategory } from "./OurProductsCategory";
 export const OurProductsContainer = () => {
   const [slug, setSlug] = useState<FilterValue>(FilterSlugOptions.DSLRcamera);
 
-  const { data, isError, isPending, error } = useFilterData({
+  const { data, isError, isPending, error } = useFilterData<ProductType[]>({
     filterValue: slug,
   });
 
-  if (isError)
+  if (isError || data === undefined)
     return ErrorActive({
       error: error,
     });
