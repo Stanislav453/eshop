@@ -18,13 +18,16 @@ export const SpecialOffersContainer = () => {
       error: error,
     });
 
-  const specialOffers = data.filter((product) => product.specialOfferStart > 0);
+  const specialOffers = data.filter((product) => product.specialOfferEnd > 0);
 
   return (
     <DashboardLayout
       direction="flex-col"
-      childrenClassName="items-center gap-4"
+      childrenClassName=" gap-4"
     >
+      <div>
+        <h2 className="text-section-title font-bold text-neutral-primary mt-16 mb-4" >Deal of the day</h2>
+      </div>
       <ProductsContainer
         data={specialOffers}
         isPending={isPending}
