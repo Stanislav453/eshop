@@ -47,7 +47,7 @@ export const ProductsView = ({
         </a>
         <div className="w-full flex flex-col items-center py-5">
           {countdown && <CountDown countdown={countdown} />}
-          <RatingContainer rating={rating} />
+          <RatingContainer rating={rating} justifyContent={"justify-center"} />
           <p className="uppercase text-sm text-paragraph-primary pt-1">
             {category}
           </p>

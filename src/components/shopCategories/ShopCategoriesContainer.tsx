@@ -3,10 +3,10 @@ import { DashboardLayout } from "../common/DashboardLayout";
 import { ImageCarousel } from "./ImageCarousel";
 import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
 import { AdvertisingBannersContainer } from "./AdvertisingBannersContainer";
-import { ShopCategoriesHeader } from "./ShopCategoriesHeader";
 import { useGetData } from "../../hooks/useGetData";
 import type { CategoryType } from "../../type";
 import { ErrorActive } from "../common/ErrorActive";
+import { SectionArrowHeader } from "./SectionHeader";
 
 export const ShopCategoriesContainer = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -26,7 +26,6 @@ export const ShopCategoriesContainer = () => {
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
-  
 
   if (data === undefined)
     return ErrorActive({
@@ -35,7 +34,8 @@ export const ShopCategoriesContainer = () => {
 
   return (
     <DashboardLayout sectionClassName="mt-24" direction="flex-col">
-      <ShopCategoriesHeader
+      <SectionArrowHeader
+        title="Shop categories"
         onPrevButtonClick={onPrevButtonClick}
         onNextButtonClick={onNextButtonClick}
         prevBtnDisabled={prevBtnDisabled}

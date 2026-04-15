@@ -83,7 +83,7 @@ export type AdvertisingBannersType = {
 };
 
 export type UseGetDataType = {
-  endpoint: "categories" | "products";
+  endpoint: "categories" | "products" | "customerReviews";
 };
 
 export type FilterValue = FilterSlugOptions;
@@ -114,4 +114,11 @@ export type ProductsViewType = {
   priceStyle: string;
   hoverImage: string;
   countdown: { d: number; h: string; m: string; s: string } | null;
+};
+
+export type CustomerReviewType = {
+  id: string;
+  userName: string;
+  rating: number;
+  comment: string;
 };

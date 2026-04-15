@@ -1,25 +1,27 @@
 import { NextButtonView } from "./NextButtonView";
 import { PrevButtonView } from "./PrewButtonView";
 
-type ShopCategoriesHeaderType = {
+type SectionArrowHeaderType = {
+  title: string;
   onPrevButtonClick: () => void;
   onNextButtonClick: () => void;
   prevBtnDisabled: boolean;
   nextBtnDisabled: boolean;
 };
 
-export const ShopCategoriesHeader = ({
+export const SectionArrowHeader = ({
+  title,
   onPrevButtonClick,
   onNextButtonClick,
   prevBtnDisabled,
   nextBtnDisabled,
-}: ShopCategoriesHeaderType) => {
+}: SectionArrowHeaderType) => {
   return (
     <div className="flex items-center justify-between mb-8">
       <h2 className="text-section-title font-bold text-neutral-primary">
-        Shop categories
+        {title}
       </h2>
-      <div className="flex items-cente">
+      <div className="flex items-center">
         <div className="embla__controls">
           <div className="embla__buttons">
             <PrevButtonView
