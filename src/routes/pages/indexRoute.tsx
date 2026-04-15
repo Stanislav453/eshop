@@ -8,6 +8,7 @@ import { SpecialOffersContainer } from "../../components/specialOffers/SpecialOf
 import { BrandContainer } from "../../components/brandLogo/BrandContainer";
 import { CustomerReviewsContainer } from "../../components/customerReviews/CustomerReviewsContainer";
 import { Newsletter } from "../../components/newsletter/Newsletter";
+import { ServiceContainer } from "../../components/service/ServiceContainer";
 
 export const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -23,6 +24,7 @@ export const indexRoute = createRoute({
         <BrandContainer />
         <CustomerReviewsContainer />
         <Newsletter />
+        <ServiceContainer />
       </main>
     );
   },
