@@ -34,6 +34,9 @@ export default {
         "button-brand-primary": "#333333",
         "primary-hover": "#FC466B",
       },
+      backgroundImage: {
+        "newsletter": "url('./public/newslatter.webp')",
+      },
     },
   },
   plugins: [],
