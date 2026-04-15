@@ -10,7 +10,7 @@ export const ServiceIcon = ({ title, desc, icon }: ServicesIconProps) => {
       <div>{icon}</div>
       <div>
         <h4 className="font-bold text-lg">{title}</h4>
-        <p className="text-neutral-primary" >{desc}</p>
+        <p className="text-paragraph-primary" >{desc}</p>
       </div>
     </li>
   );

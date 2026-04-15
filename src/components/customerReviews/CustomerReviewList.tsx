@@ -21,7 +21,7 @@ export const CustomerReviewList = ({
           <span>
             <FaQuoteLeft className="text-4xl" />
           </span>
-          <p className="text-lg font-thin py-4">{comment}</p>
+          <p className="text-lg font-thin py-4 text-paragraph-primary">{comment}</p>
           <div className="w-full flex ">
             <h3 className="w-full text-lg font-bold">{userName}</h3>
             <RatingContainer rating={rating} justifyContent={"justify-end"} />
