@@ -13,7 +13,7 @@ export const Newsletter = () => {
               Sign up for our newsletter to receive special offers
             </p>
           </div>
-          <form action="#" className="w-full p-1 sm:bg-neutral-tertiary flex flex-col sm:flex-row">
+          <form action="#" className="w-full sm:w-auto p-1 sm:bg-neutral-tertiary flex flex-col sm:flex-row">
             <input
               className=" p-2"
               type="email"
