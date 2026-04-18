@@ -4,7 +4,7 @@ import { DashboardLayout } from "../common/DashboardLayout";
 
 export const NavView = () => {
   return (
-    <DashboardLayout sectionClassName="bg-gradient-to-r from-blue-600 to-red-600" childrenClassName="justify-between" direction="flex-row">
+    <DashboardLayout sectionClassName="hidden lg:block bg-gradient-to-r from-blue-600 to-red-600" childrenClassName="justify-between" direction="flex-row">
       <div className="flex justify-center items-center ">
         <div>
           <CiHeadphones className="text-[1.6rem] text-neutral-tertiary  " />

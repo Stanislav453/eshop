@@ -3,7 +3,7 @@ import elesaLogo from "../../../public/elesaLogo.webp";
 
 export const FooterDescription = () => {
   return (
-    <div className="flex-1" >
+    <div className="w-full lg:flex-1 mb-8 lg:mb-0">
       <div className="w-[107px] h-[30px]">
         <img
           src={elesaLogo}

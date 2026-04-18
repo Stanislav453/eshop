@@ -18,7 +18,7 @@ export const SliderContainer = () => {
   }, [emblaApi]);
 
   return (
-    <div className="embla" dir="rtl">
+    <div className="embla w-full lg:w-3/4" dir="rtl">
       <div className="embla__viewport" ref={emblaRef}>
         <SliderImagesView />
       </div>

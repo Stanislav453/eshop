@@ -15,7 +15,7 @@ export const OurProductsCategory = ({ setSlug }: OurProductsCategoryType) => {
     CategoryOptions.DSLRcamera,
   );
   return (
-    <ul className="flex gap-6 pt-4 pb-10 uppercase font-semibold text-neutral-secondary">
+    <ul className="flex flex-wrap gap-6 pt-4 pb-10 uppercase font-semibold text-neutral-secondary">
       {filterCategory.map((filterValue: FilterCategoryType) => {
         const { slug, title } = filterValue;
         const isActive =

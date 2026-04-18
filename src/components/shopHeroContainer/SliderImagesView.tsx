@@ -2,7 +2,7 @@ import { sliderImages } from "../../utils/sliderImages";
 
 export const SliderImagesView = () => {
   return (
-    <div className="embla__container h-shop-product-container">
+    <div className="embla__container h-shop-product-container ">
       {sliderImages.map((image, index) => {
         const { title, src, price } = image;
         return (

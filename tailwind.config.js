@@ -33,6 +33,7 @@ export default {
         "special-scondary-hover": "#ffffff",
         "button-brand-primary": "#333333",
         "primary-hover": "#FC466B",
+        'black-rgba': 'rgba(0, 0, 0, 0.54)',
       },
       backgroundImage: {
         "newsletter": "url('./public/newslatter.webp')",

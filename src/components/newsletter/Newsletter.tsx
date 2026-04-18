@@ -2,9 +2,9 @@ import { DashboardLayout } from "../common/DashboardLayout";
 
 export const Newsletter = () => {
   return (
-    <DashboardLayout sectionClassName="mt-14" direction="flex-col">
+    <DashboardLayout sectionClassName="mt-7 lg:mt-14" direction="flex-col">
       <div className="bg-newsletter">
-        <div className="flex  justify-center items-center gap-8 p-12">
+        <div className="flex  justify-center items-center gap-8 p-12 flex-col sm:flex-row">
           <div>
             <h3 className="text-2xl text-neutral-tertiary font-bold">
               Subscribe newsletter
@@ -13,9 +13,9 @@ export const Newsletter = () => {
               Sign up for our newsletter to receive special offers
             </p>
           </div>
-          <form action="#" className=" p-1 bg-neutral-tertiary">
+          <form action="#" className="w-full p-1 sm:bg-neutral-tertiary flex flex-col sm:flex-row">
             <input
-              className="p-2"
+              className=" p-2"
               type="email"
               name="contact-email"
               placeholder="Your email address"
@@ -24,7 +24,7 @@ export const Newsletter = () => {
             />
             <button
               type="submit"
-              className="p-2 font-bold border-l-2 bg-neutral-tertiary hover:text-primary-hover transition-colors duration-300"
+              className="p-2 font-bold mt-4 sm:mt-0  text-white sm:text-black sm:border-l-2 sm:bg-neutral-tertiary hover:text-primary-hover transition-colors duration-300"
             >
               SUBSCRIBE
             </button>

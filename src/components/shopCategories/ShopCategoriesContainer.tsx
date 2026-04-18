@@ -33,7 +33,7 @@ export const ShopCategoriesContainer = () => {
     });
 
   return (
-    <DashboardLayout sectionClassName="mt-24" direction="flex-col">
+    <DashboardLayout sectionClassName="mt-12 lg:mt-24" direction="flex-col">
       <SectionArrowHeader
         title="Shop categories"
         onPrevButtonClick={onPrevButtonClick}

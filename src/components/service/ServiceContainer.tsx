@@ -10,7 +10,7 @@ import { ServiceIcon } from "./ServiceIcon";
 export const ServiceContainer = () => {
   return (
     <DashboardLayout sectionClassName="mt-14" direction="flex-col">
-      <ul className="flex justify-between mx-8">
+      <ul className="flex flex-wrap gap-8 justify-between mx-8">
         <ServiceIcon
           title="Free delivery"
           desc="Orders from all item"

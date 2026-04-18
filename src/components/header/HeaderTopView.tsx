@@ -6,7 +6,7 @@ export const HeaderTopView = () => {
   return (
     <section>
       <DashboardLayout direction="flex-row" childrenClassName="justify-between">
-        <div className="flex gap-5">
+        <div className="hidden w-full gap-5 lg:flex ">
           <span className="flex items-center gap-2 text-neutral-secondary">
             <CiLocationOn className="text-icon-sm" />
             Find stores
@@ -16,10 +16,10 @@ export const HeaderTopView = () => {
             100k Followers
           </span>
         </div>
-        <p className="text-neutral-secondary">
+        <p className="w-full text-center  text-neutral-secondary">
           Free delivery on orders over $100 discount.
         </p>
-        <div className="flex gap-6">
+        <div className="hidden w-full gap-6 lg:flex justify-end">
           <Link
             to="/about"
             className="text-neutral-secondary hover:text-neutral-primary transition-colors"

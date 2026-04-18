@@ -7,7 +7,7 @@ import { FooterInformation } from "./FooterInformation";
 export const Footer = () => {
   return (
     <footer className="bg-box-brand-color ">
-      <DashboardLayout childrenClassName="py-16" sectionClassName="mt-16" direction="flex-row">
+      <DashboardLayout childrenClassName="flex-wrap py-16" sectionClassName="mt-16" direction="flex-row">
         <FooterDescription />
         <FooterInformation />
         <FooterCategory />
