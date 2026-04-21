@@ -6,13 +6,13 @@ import { FooterInformation } from "./FooterInformation";
 
 export const Footer = () => {
   return (
-    <footer className="bg-box-brand-color ">
-      <DashboardLayout childrenClassName="flex-wrap py-16" sectionClassName="mt-16" direction="flex-row">
+    <DashboardLayout sectionClassName="bg-box-brand-color">
+      <footer className="flex  flex-wrap py-16">
         <FooterDescription />
         <FooterInformation />
         <FooterCategory />
         <FooterContact />
-      </DashboardLayout>
-    </footer>
+      </footer>
+    </DashboardLayout>
   );
 };
