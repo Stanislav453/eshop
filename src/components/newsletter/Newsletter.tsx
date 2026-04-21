@@ -1,8 +1,6 @@
-import { DashboardLayout } from "../common/DashboardLayout";
-
 export const Newsletter = () => {
   return (
-    <DashboardLayout sectionClassName="mt-7 lg:mt-14" direction="flex-col">
+    <div>
       <div className="bg-newsletter">
         <div className="flex  justify-center items-center gap-8 p-12 flex-col sm:flex-row">
           <div>
@@ -13,7 +11,10 @@ export const Newsletter = () => {
               Sign up for our newsletter to receive special offers
             </p>
           </div>
-          <form action="#" className="w-full sm:w-auto p-1 sm:bg-neutral-tertiary flex flex-col sm:flex-row">
+          <form
+            action="#"
+            className="w-full sm:w-auto p-1 sm:bg-neutral-tertiary flex flex-col sm:flex-row"
+          >
             <input
               className=" p-2"
               type="email"
@@ -31,6 +32,6 @@ export const Newsletter = () => {
           </form>
         </div>
       </div>
-    </DashboardLayout>
+    </div>
   );
 };

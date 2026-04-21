@@ -1,6 +1,5 @@
 import { useGetData } from "../../hooks/useGetData";
 import type { CustomerReviewType } from "../../type";
-import { DashboardLayout } from "../common/DashboardLayout";
 import { ErrorActive } from "../common/ErrorActive";
 import useEmblaCarousel from "embla-carousel-react";
 import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
@@ -33,7 +32,7 @@ export const CustomerReviewsContainer = () => {
   }
 
   return (
-    <DashboardLayout sectionClassName="mt-14" direction="flex-col">
+    <section>
       <SectionArrowHeader
         title="Customer review"
         onPrevButtonClick={onPrevButtonClick}
@@ -48,6 +47,6 @@ export const CustomerReviewsContainer = () => {
         isPending={isPending}
         isError={isError}
       />
-    </DashboardLayout>
+    </section>
   );
 };

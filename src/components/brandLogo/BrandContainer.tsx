@@ -1,4 +1,3 @@
-import { DashboardLayout } from "../common/DashboardLayout";
 import brandLogo1 from "../../../public/logo/brand-logo-1.webp";
 import brandLogo2 from "../../../public/logo/brand-logo-2.webp";
 import brandLogo3 from "../../../public/logo/brand-logo-3.avif";
@@ -26,7 +25,7 @@ export const BrandContainer = () => {
     autoplay.play();
   }, [emblaApi]);
   return (
-    <DashboardLayout sectionClassName="mt-24" direction="flex-col">
+    <section>
       <div className="embla__shop_brand_controls border-b pb-12">
         <div className="embla__viewport" ref={emblaRef}>
           <ul className="embla__container_brand">
@@ -41,6 +40,6 @@ export const BrandContainer = () => {
           </ul>
         </div>
       </div>
-    </DashboardLayout>
+    </section>
   );
 };

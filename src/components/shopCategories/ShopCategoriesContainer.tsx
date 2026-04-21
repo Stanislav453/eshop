@@ -1,5 +1,4 @@
 import useEmblaCarousel from "embla-carousel-react";
-import { DashboardLayout } from "../common/DashboardLayout";
 import { ImageCarousel } from "./ImageCarousel";
 import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
 import { AdvertisingBannersContainer } from "./AdvertisingBannersContainer";
@@ -33,7 +32,7 @@ export const ShopCategoriesContainer = () => {
     });
 
   return (
-    <DashboardLayout sectionClassName="mt-12 lg:mt-24" direction="flex-col">
+    <section>
       <SectionArrowHeader
         title="Shop categories"
         onPrevButtonClick={onPrevButtonClick}
@@ -49,6 +48,6 @@ export const ShopCategoriesContainer = () => {
         error={error}
       />
       <AdvertisingBannersContainer />
-    </DashboardLayout>
+    </section>
   );
 };

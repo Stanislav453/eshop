@@ -4,7 +4,6 @@ import {
   type FilterValue,
   type ProductType,
 } from "../../type";
-import { DashboardLayout } from "../common/DashboardLayout";
 import { useFilterData } from "../../hooks/useFilterData";
 import { ErrorActive } from "../common/ErrorActive";
 import { OurProductsCategory } from "./OurProductsCategory";
@@ -23,12 +22,12 @@ export const OurProductsContainer = () => {
     });
 
   return (
-    <DashboardLayout direction="flex-col" sectionClassName="py-14">
+    <section>
       <h2 className="text-section-title font-bold text-neutral-primary">
         Our products
       </h2>
       <OurProductsCategory setSlug={setSlug} />
       <ProductsContainer data={data} isPending={isPending} />
-    </DashboardLayout>
+    </section>
   );
 };

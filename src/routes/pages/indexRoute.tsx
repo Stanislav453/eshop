@@ -15,7 +15,7 @@ export const indexRoute = createRoute({
   path: "/",
   component: function Index() {
     return (
-      <main className=" p-2">
+      <>
         <ShopHeroContainer />
         <ShopCategoriesContainer />
         <OurProductsContainer />
@@ -25,7 +25,7 @@ export const indexRoute = createRoute({
         <CustomerReviewsContainer />
         <Newsletter />
         <ServiceContainer />
-      </main>
+      </>
     );
   },
 });

@@ -1,10 +1,8 @@
-import { DashboardLayout } from "../common/DashboardLayout";
 import { CategoryView } from "../shopCategories/CategoryView";
 import { SliderContainer } from "./SliderContainer";
 
 export const ShopHeroContainer = () => {
   return (
-    <DashboardLayout  direction="flex-row">
       <div className="flex flex-wrap lg:flex-nowrap gap-8 w-full pt-4">
         <CategoryView />
         <SliderContainer />
@@ -15,7 +13,7 @@ export const ShopHeroContainer = () => {
             alt="Offer Banner"
           />
         </div>
+
       </div>
-    </DashboardLayout>
   );
 };

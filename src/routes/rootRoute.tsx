@@ -1,19 +1,18 @@
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-import { HeaderTopView } from "../components/header/HeaderTopView";
-import { ShopHeaderView } from "../components/header/ShopHeaderView";
 import { NavView } from "../components/header/NavView";
 import { Footer } from "../components/footer/Footer";
+import { Header } from "../components/header/Header";
+import { MainContent } from "../components/mainContent/MainContent";
 
 export const rootRoute = createRootRoute({
   component: () => (
-    <div>
-      <HeaderTopView />
-      <ShopHeaderView />
+    <>
+      <Header />
       <NavView />
-      <Outlet />
+      <MainContent />
       <Footer />
       <TanStackRouterDevtools />
-    </div>
+    </>
   ),
 });

@@ -4,12 +4,11 @@ import {
   CiHeadphones,
   CiRedo,
 } from "react-icons/ci";
-import { DashboardLayout } from "../common/DashboardLayout";
 import { ServiceIcon } from "./ServiceIcon";
 
 export const ServiceContainer = () => {
   return (
-    <DashboardLayout sectionClassName="mt-14" direction="flex-col">
+    <div>
       <ul className="flex flex-wrap gap-8 justify-between mx-8">
         <ServiceIcon
           title="Free delivery"
@@ -32,6 +31,6 @@ export const ServiceContainer = () => {
           icon={<CiCreditCard1 className="text-5xl" />}
         />
       </ul>
-    </DashboardLayout>
+    </div>
   );
 };

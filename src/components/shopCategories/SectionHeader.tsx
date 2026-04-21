@@ -17,7 +17,7 @@ export const SectionArrowHeader = ({
   nextBtnDisabled,
 }: SectionArrowHeaderType) => {
   return (
-    <div className="flex flex-col sm:flex-row gap-6 items-center justify-between mb-8">
+    <header className="flex flex-col sm:flex-row gap-6 items-center justify-between mb-8">
       <h2 className="text-section-title font-bold text-neutral-primary">
         {title}
       </h2>
@@ -35,6 +35,6 @@ export const SectionArrowHeader = ({
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
