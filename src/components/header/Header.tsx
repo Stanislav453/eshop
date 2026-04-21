@@ -1,12 +1,14 @@
-import { HeaderTopView } from './HeaderTopView'
-import { ShopHeaderView } from './ShopHeaderView'
+import { DashboardLayout } from "../common/DashboardLayout";
+import { HeaderTopView } from "./HeaderTopView";
+import { ShopHeaderView } from "./ShopHeaderView";
 
 export const Header = () => {
   return (
     <header>
-      <HeaderTopView />
-      <ShopHeaderView />
+      <DashboardLayout>
+        <HeaderTopView />
+        <ShopHeaderView />
+      </DashboardLayout>
     </header>
-  )
-}
-
+  );
+};

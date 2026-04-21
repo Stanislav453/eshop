@@ -7,7 +7,6 @@ import {
   CiUser,
 } from "react-icons/ci";
 import { Link } from "@tanstack/react-router";
-import { DashboardLayout } from "../common/DashboardLayout";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 
@@ -15,7 +14,6 @@ export const ShopHeaderView = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <DashboardLayout>
       <div className="flex flex-row justify-between my-2">
         <div className="hidden lg:flex">
           <input
@@ -99,6 +97,5 @@ export const ShopHeaderView = () => {
           </div>
         )}
       </div>
-    </DashboardLayout>
   );
 };
