@@ -4,8 +4,8 @@ import { DashboardLayout } from "../common/DashboardLayout";
 
 export const HeaderTopView = () => {
   return (
-    <section>
-      <DashboardLayout direction="flex-row" childrenClassName="justify-between">
+    <DashboardLayout>
+      <div className="flex flex-row justify-between">
         <div className="hidden w-full gap-5 lg:flex ">
           <span className="flex items-center gap-2 text-neutral-secondary">
             <CiLocationOn className="text-icon-sm" />
@@ -39,8 +39,8 @@ export const HeaderTopView = () => {
             Order tracking
           </Link>
         </div>
-      </DashboardLayout>
-      <hr />
-    </section>
+        <hr />
+      </div>
+    </DashboardLayout>
   );
 };
