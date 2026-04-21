@@ -5,7 +5,7 @@ import { DashboardLayout } from "../common/DashboardLayout";
 export const HeaderTopView = () => {
   return (
     <DashboardLayout>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between pt-4">
         <div className="hidden w-full gap-5 lg:flex ">
           <span className="flex items-center gap-2 text-neutral-secondary">
             <CiLocationOn className="text-icon-sm" />
