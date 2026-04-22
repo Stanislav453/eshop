@@ -8,6 +8,10 @@ import { useFilterData } from "../../hooks/useFilterData";
 import { ErrorActive } from "../common/ErrorActive";
 import { OurProductsCategory } from "./OurProductsCategory";
 import { ProductsContainer } from "../common/ProductsContainer";
+import { LoadingSpiner } from "../common/LoadingSpiner";
+import { CiWarning } from "react-icons/ci";
+import { ErrorItem } from "../common/ErrorItem";
+
 
 export const OurProductsContainer = () => {
   const [slug, setSlug] = useState<FilterValue>(FilterSlugOptions.DSLRcamera);
@@ -16,10 +20,18 @@ export const OurProductsContainer = () => {
     filterValue: slug,
   });
 
-  if (isError || data === undefined)
-    return ErrorActive({
-      error: error,
-    });
+  if (isPending) return <LoadingSpiner />;
+
+  if (isError) return <ErrorActive error={error} />;
+
+  if (data.length === 0)
+    return (
+      <ErrorItem
+        icon={CiWarning}
+        color="text-yellow-500"
+        message="We have no products yet. Please check back later."
+      />
+    );
 
   return (
     <section>
@@ -27,7 +39,7 @@ export const OurProductsContainer = () => {
         Our products
       </h2>
       <OurProductsCategory setSlug={setSlug} />
-      <ProductsContainer data={data} isPending={isPending} />
+      <ProductsContainer data={data} />
     </section>
   );
 };

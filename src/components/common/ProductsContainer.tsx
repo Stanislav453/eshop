@@ -1,10 +1,8 @@
 import type { ProductType } from "../../type";
-import { LoadingSpiner } from "./LoadingSpiner";
 import { ProductsView } from "./ProductsView";
 
 type ProductsContainerType = {
   data: ProductType[];
-  isPending: boolean;
   getCountdown?: (
     product: ProductType,
   ) => { d: number; h: string; m: string; s: string } | null;
@@ -12,13 +10,8 @@ type ProductsContainerType = {
 
 export const ProductsContainer = ({
   data,
-  isPending,
   getCountdown,
 }: ProductsContainerType) => {
-  if (isPending) {
-    return <LoadingSpiner />;
-  }
-
   return (
     <ul className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {data.map((product: ProductType) => {

@@ -1,9 +1,8 @@
 import { CircularProgress } from "react-loader-spinner";
-import { DashboardLayout } from "./DashboardLayout";
 
 export const LoadingSpiner = () => {
   return (
-    <DashboardLayout direction="flex-row" childrenClassName="justify-center">
+    <div>
       <CircularProgress
         height="50"
         width="50"
@@ -15,6 +14,6 @@ export const LoadingSpiner = () => {
         strokeWidth={2}
         animationDuration={1}
       />
-    </DashboardLayout>
+    </div>
   );
 };

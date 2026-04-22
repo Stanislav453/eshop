@@ -5,6 +5,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
 import { SectionArrowHeader } from "../shopCategories/SectionHeader";
 import { CustomerReviews } from "./CustomerReviews";
+import { LoadingSpiner } from "../common/LoadingSpiner";
+import { ErrorItem } from "../common/ErrorItem";
+import { CiWarning } from "react-icons/ci";
 
 export const CustomerReviewsContainer = () => {
   const { data, isPending, error, isError } = useGetData<CustomerReviewType[]>({
@@ -25,11 +28,18 @@ export const CustomerReviewsContainer = () => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  if (data === undefined) {
-    return ErrorActive({
-      error: error,
-    });
-  }
+  if (isPending) return <LoadingSpiner />;
+
+  if (isError) return <ErrorActive error={error} />;
+
+  if (data.length === 0)
+    return (
+      <ErrorItem
+        icon={CiWarning}
+        color="text-yellow-500"
+        message="We have no products yet. Please check back later."
+      />
+    );
 
   return (
     <section>
@@ -43,9 +53,7 @@ export const CustomerReviewsContainer = () => {
       <CustomerReviews
         data={data}
         emblaRef={emblaRef}
-        error={error}
-        isPending={isPending}
-        isError={isError}
+
       />
     </section>
   );

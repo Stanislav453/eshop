@@ -23,7 +23,7 @@ export enum CategoryOptions {
 export enum FilterSlugOptions {
   DSLRcamera = "dslr-camera",
   Mouse = "mouse",
-  TVscreen = "tv-screen",
+  TVscreen = "tv-scren",
   Computer = "computer",
   Pendrive = "pendrive",
   Headphones = "headphones",

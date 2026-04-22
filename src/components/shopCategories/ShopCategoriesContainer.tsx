@@ -4,8 +4,11 @@ import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
 import { AdvertisingBannersContainer } from "./AdvertisingBannersContainer";
 import { useGetData } from "../../hooks/useGetData";
 import type { CategoryType } from "../../type";
-import { ErrorActive } from "../common/ErrorActive";
 import { SectionArrowHeader } from "./SectionHeader";
+import { LoadingSpiner } from "../common/LoadingSpiner";
+import { ErrorActive } from "../common/ErrorActive";
+import { ErrorItem } from "../common/ErrorItem";
+import { CiWarning } from "react-icons/ci";
 
 export const ShopCategoriesContainer = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -26,10 +29,18 @@ export const ShopCategoriesContainer = () => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  if (data === undefined)
-    return ErrorActive({
-      error: error,
-    });
+  if (isPending) return <LoadingSpiner />;
+
+  if (isError) return <ErrorActive error={error} />;
+
+  if (data.length === 0)
+    return (
+      <ErrorItem
+        icon={CiWarning}
+        color="text-yellow-500"
+        message="We have no products yet. Please check back later."
+      />
+    );
 
   return (
     <section>
@@ -40,13 +51,7 @@ export const ShopCategoriesContainer = () => {
         prevBtnDisabled={prevBtnDisabled}
         nextBtnDisabled={nextBtnDisabled}
       />
-      <ImageCarousel
-        isError={isError}
-        isPending={isPending}
-        data={data}
-        emblaRef={emblaRef}
-        error={error}
-      />
+      <ImageCarousel data={data} emblaRef={emblaRef} />
       <AdvertisingBannersContainer />
     </section>
   );
