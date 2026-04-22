@@ -8,7 +8,7 @@ export const Header = () => {
       <DashboardLayout>
         <HeaderTopView />
       </DashboardLayout>
-        <hr />
+      <hr />
       <DashboardLayout>
         <ShopHeaderView />
       </DashboardLayout>
