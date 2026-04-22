@@ -7,6 +7,9 @@ export const Header = () => {
     <header>
       <DashboardLayout>
         <HeaderTopView />
+      </DashboardLayout>
+        <hr />
+      <DashboardLayout>
         <ShopHeaderView />
       </DashboardLayout>
     </header>

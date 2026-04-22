@@ -3,7 +3,7 @@ import { CiInstagram, CiLocationOn } from "react-icons/ci";
 
 export const HeaderTopView = () => {
   return (
-      <div className="flex flex-row justify-between pt-4">
+      <div className="flex flex-row justify-between py-2">
         <div className="hidden w-full gap-5 lg:flex ">
           <span className="flex items-center gap-2 text-neutral-secondary">
             <CiLocationOn className="text-icon-sm" />
