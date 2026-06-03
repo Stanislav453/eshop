@@ -9,6 +9,7 @@ import {
 import { Link } from "@tanstack/react-router";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
+import elesaLogo from "../../../public/elesaLogo.webp"
 
 export const ShopHeaderView = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ export const ShopHeaderView = () => {
         </button>
       </div>
       <button className="w-[106px] py-3">
-        <img src="../../public/elesaLogo.webp" alt="elesa_logo" />
+        <img src={elesaLogo} alt="elesa_logo" />
       </button>
       <div className="flex gap-4 lg:gap-8">
         <button onClick={() => setIsOpen(true)}>

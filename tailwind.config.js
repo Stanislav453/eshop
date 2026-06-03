@@ -36,7 +36,7 @@ export default {
         'black-rgba': 'rgba(0, 0, 0, 0.54)',
       },
       backgroundImage: {
-        "newsletter": "url('./public/newslatter.webp')",
+        "newsletter": "url('/newslatter.webp')",
       },
     },
   },
