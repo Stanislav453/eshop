@@ -34,6 +34,7 @@ export const ShopCategoriesContainer = () => {
   if (isError) return <ErrorActive error={error} />;
 
   if (data.length === 0)
+    
     return (
       <ErrorItem
         icon={CiWarning}

@@ -7,9 +7,9 @@ type ErrorActiveProps = {
 };
 
 export const ErrorActive = ({ error }: ErrorActiveProps) => {
-  if (!error) return null;
-
   console.log("%cApi answer:", "color: red; font-weight: bold;", error.message);
+
+  console.log(error);
 
   if (axios.isAxiosError(error)) {
     const status = error.response?.status;
