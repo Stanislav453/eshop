@@ -1,5 +1,7 @@
 import { CategoryView } from "../shopCategories/CategoryView";
 import { SliderContainer } from "./SliderContainer";
+// import offerBanner from "../../public/offer-banner.webp";
+import offerBanner from "../../../public/offer-banner.webp"
 
 export const ShopHeroContainer = () => {
   return (
@@ -9,7 +11,7 @@ export const ShopHeroContainer = () => {
         <div className=" w-full lg:w-1/4 h-shop-product-container">
           <img
             className="w-full h-full"
-            src="../../public/offer-banner.webp"
+            src={offerBanner}
             alt="Offer Banner"
           />
         </div>
