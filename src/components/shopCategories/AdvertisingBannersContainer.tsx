@@ -1,4 +1,4 @@
-import { advertisingBaners } from "../../utils/advertisingBaners";
+import { advertisingBaners } from "../../utils/advertisingBaners.tsx";
 import { AdvertisingBannersView } from "./AdvertisingBannersView";
 
 export const AdvertisingBannersContainer = () => {
