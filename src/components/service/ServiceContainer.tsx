@@ -8,7 +8,7 @@ import { ServiceIcon } from "./ServiceIcon";
 
 const ServiceContainer = () => {
   return (
-    <div>
+    <>
       <ul className="flex flex-wrap gap-8 justify-between mx-8">
         <ServiceIcon
           title="Free delivery"
@@ -31,7 +31,7 @@ const ServiceContainer = () => {
           icon={<CiCreditCard1 className="text-5xl" />}
         />
       </ul>
-    </div>
+    </>
   );
 };
 

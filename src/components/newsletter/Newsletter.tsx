@@ -1,6 +1,6 @@
 const Newsletter = () => {
   return (
-    <div>
+    <>
       <div className="bg-newsletter">
         <div className="flex  justify-center items-center gap-8 p-12 flex-col sm:flex-row">
           <div>
@@ -32,7 +32,7 @@ const Newsletter = () => {
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -25,7 +25,7 @@ const BrandContainer = () => {
     autoplay.play();
   }, [emblaApi]);
   return (
-    <section>
+    <>
       <div className="embla__shop_brand_controls border-b pb-12">
         <div className="embla__viewport" ref={emblaRef}>
           <ul className="embla__container_brand">
@@ -40,7 +40,7 @@ const BrandContainer = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

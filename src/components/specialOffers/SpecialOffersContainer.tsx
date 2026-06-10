@@ -31,7 +31,7 @@ const SpecialOffersContainer = () => {
   const specialOffers = data.filter((product) => product.specialOfferEnd > 0);
 
   return (
-    <section>
+    <>
       <header>
         <h2 className="text-section-title font-bold text-neutral-primary mt-16 mb-4">
           Deal of the day
@@ -41,7 +41,7 @@ const SpecialOffersContainer = () => {
         data={specialOffers}
         getCountdown={(product) => offersTime(now, product.specialOfferEnd)}
       />
-    </section>
+    </>
   );
 };
 

@@ -27,9 +27,9 @@ const RenderOnViewportEntry = ({
   });
 
   return (
-    <div {...wrapperDivProps} ref={sectionRef}>
+    <section {...wrapperDivProps} ref={sectionRef}>
       {entered && <Suspense fallback={<Loader />}>{children}</Suspense>}
-    </div>
+    </section>
   );
 };
 

@@ -34,13 +34,13 @@ const OurProductsContainer = () => {
     );
 
   return (
-    <section>
+    <>
       <h2 className="text-section-title font-bold text-neutral-primary">
         Our products
       </h2>
       <OurProductsCategory setSlug={setSlug} />
       <ProductsContainer data={data} />
-    </section>
+    </>
   );
 };
   

@@ -44,7 +44,7 @@ import { CiWarning } from "react-icons/ci";
     );
 
   return (
-    <section>
+    <>
       <SectionArrowHeader
         title="Shop categories"
         onPrevButtonClick={onPrevButtonClick}
@@ -54,7 +54,7 @@ import { CiWarning } from "react-icons/ci";
       />
       <ImageCarousel data={data} emblaRef={emblaRef} />
       <AdvertisingBannersContainer />
-    </section>
+    </>
   );
 };
 

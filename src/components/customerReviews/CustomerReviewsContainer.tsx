@@ -42,7 +42,7 @@ import { CiWarning } from "react-icons/ci";
     );
 
   return (
-    <section>
+    <>
       <SectionArrowHeader
         title="Customer review"
         onPrevButtonClick={onPrevButtonClick}
@@ -55,7 +55,7 @@ import { CiWarning } from "react-icons/ci";
         emblaRef={emblaRef}
 
       />
-    </section>
+    </>
   );
 };
 
