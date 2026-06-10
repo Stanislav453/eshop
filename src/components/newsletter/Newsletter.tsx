@@ -1,4 +1,4 @@
-export const Newsletter = () => {
+const Newsletter = () => {
   return (
     <div>
       <div className="bg-newsletter">
@@ -35,3 +35,5 @@ export const Newsletter = () => {
     </div>
   );
 };
+
+export default Newsletter;

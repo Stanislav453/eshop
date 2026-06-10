@@ -9,7 +9,7 @@ import { LoadingSpiner } from "../common/LoadingSpiner";
 import { ErrorItem } from "../common/ErrorItem";
 import { CiWarning } from "react-icons/ci";
 
-export const CustomerReviewsContainer = () => {
+ const CustomerReviewsContainer = () => {
   const { data, isPending, error, isError } = useGetData<CustomerReviewType[]>({
     endpoint: "customerReviews",
   });
@@ -58,3 +58,5 @@ export const CustomerReviewsContainer = () => {
     </section>
   );
 };
+
+export default CustomerReviewsContainer;

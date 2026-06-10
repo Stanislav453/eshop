@@ -11,7 +11,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useEffect } from "react";
 import { BrandView } from "./BrandView";
 
-export const BrandContainer = () => {
+const BrandContainer = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start", containScroll: "trimSnaps" },
     [Autoplay()],
@@ -43,3 +43,5 @@ export const BrandContainer = () => {
     </section>
   );
 };
+
+export default BrandContainer;

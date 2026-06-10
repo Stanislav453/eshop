@@ -10,7 +10,7 @@ import { ErrorActive } from "../common/ErrorActive";
 import { ErrorItem } from "../common/ErrorItem";
 import { CiWarning } from "react-icons/ci";
 
-export const ShopCategoriesContainer = () => {
+ const ShopCategoriesContainer = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -57,3 +57,5 @@ export const ShopCategoriesContainer = () => {
     </section>
   );
 };
+
+export default ShopCategoriesContainer;

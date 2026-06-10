@@ -13,7 +13,7 @@ import { CiWarning } from "react-icons/ci";
 import { ErrorItem } from "../common/ErrorItem";
 
 
-export const OurProductsContainer = () => {
+const OurProductsContainer = () => {
   const [slug, setSlug] = useState<FilterValue>(FilterSlugOptions.DSLRcamera);
 
   const { data, isError, isPending, error } = useFilterData<ProductType[]>({
@@ -43,3 +43,5 @@ export const OurProductsContainer = () => {
     </section>
   );
 };
+  
+export default OurProductsContainer;

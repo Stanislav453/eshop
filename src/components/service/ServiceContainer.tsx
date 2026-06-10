@@ -6,7 +6,7 @@ import {
 } from "react-icons/ci";
 import { ServiceIcon } from "./ServiceIcon";
 
-export const ServiceContainer = () => {
+const ServiceContainer = () => {
   return (
     <div>
       <ul className="flex flex-wrap gap-8 justify-between mx-8">
@@ -34,3 +34,5 @@ export const ServiceContainer = () => {
     </div>
   );
 };
+
+export default ServiceContainer;

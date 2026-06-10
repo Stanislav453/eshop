@@ -1,6 +1,6 @@
 import offerBanner from "../../../public/offer-banner-second.webp";
 
-export const OfferBanner = () => {
+ const OfferBanner = () => {
   return (
     <div>
       <a href="#">
@@ -9,3 +9,5 @@ export const OfferBanner = () => {
     </div>
   );
 };
+
+export default OfferBanner;

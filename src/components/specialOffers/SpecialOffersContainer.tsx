@@ -8,7 +8,7 @@ import { ErrorItem } from "../common/ErrorItem";
 import { LoadingSpiner } from "../common/LoadingSpiner";
 import { CiWarning } from "react-icons/ci";
 
-export const SpecialOffersContainer = () => {
+const SpecialOffersContainer = () => {
   const now = useNow();
 
   const { data, isPending, isError, error } = useGetData<ProductType[]>({
@@ -44,3 +44,5 @@ export const SpecialOffersContainer = () => {
     </section>
   );
 };
+
+export default SpecialOffersContainer;
