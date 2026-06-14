@@ -5,8 +5,8 @@ import { useNow } from "../../hooks/useNow";
 import { ErrorActive } from "../common/ErrorActive";
 import { ProductsContainer } from "../common/ProductsContainer";
 import { ErrorItem } from "../common/ErrorItem";
-import { LoadingSpiner } from "../common/LoadingSpiner";
 import { CiWarning } from "react-icons/ci";
+import { Skeleton } from "../common/Skeleton.tsx/Skeleton";
 
 const SpecialOffersContainer = () => {
   const now = useNow();
@@ -15,7 +15,7 @@ const SpecialOffersContainer = () => {
     endpoint: "products",
   });
 
-  if (isPending) return <LoadingSpiner />;
+  if (isPending) return <Skeleton placeholdersCount={3} skeletonHeight={700} />;
 
   if (isError) return <ErrorActive error={error} />;
 

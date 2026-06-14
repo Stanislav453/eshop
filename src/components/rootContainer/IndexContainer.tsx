@@ -8,33 +8,64 @@ import CustomerReviewsContainer from "../customerReviews/CustomerReviewsContaine
 import Newsletter from "../newsletter/Newsletter";
 import ServiceContainer from "../service/ServiceContainer";
 import RenderOnViewportEntry from "../common/renderOnViewportEntry/RenderOnViewportEntry";
+import { AdvertisingBannersContainer } from "../shopCategories/AdvertisingBannersContainer";
 
 export const IndexContainer = () => {
   return (
     <>
       <ShopHeroContainer />
-      <RenderOnViewportEntry>
+      <RenderOnViewportEntry
+        placeholderCount={5}
+        minHeight={325}
+        suspenseActive={false}
+      >
         <ShopCategoriesContainer />
       </RenderOnViewportEntry>
-      <RenderOnViewportEntry>
+      <RenderOnViewportEntry
+        minHeight={700}
+        suspenseActive={true}
+        placeholderCount={3}
+      >
+        <AdvertisingBannersContainer />
+      </RenderOnViewportEntry>
+      <RenderOnViewportEntry minHeight={400} suspenseActive={false}>
         <OurProductsContainer />
       </RenderOnViewportEntry>
-      <RenderOnViewportEntry>
+      <RenderOnViewportEntry
+        placeholderCount={1}
+        minHeight={350}
+        suspenseActive={true}
+      >
         <OfferBanner />
       </RenderOnViewportEntry>
-      <RenderOnViewportEntry>
+      <RenderOnViewportEntry minHeight={1200} suspenseActive={false}>
         <SpecialOffersContainer />
       </RenderOnViewportEntry>
-      <RenderOnViewportEntry>
+      <RenderOnViewportEntry
+        placeholderCount={8}
+        minHeight={150}
+        suspenseActive={true}
+      >
         <BrandContainer />
       </RenderOnViewportEntry>
-      <RenderOnViewportEntry>
+      <RenderOnViewportEntry
+        minHeight={300}
+        suspenseActive={true}
+      >
         <CustomerReviewsContainer />
       </RenderOnViewportEntry>
-      <RenderOnViewportEntry>
+      <RenderOnViewportEntry
+        placeholderCount={1}
+        minHeight={150}
+        suspenseActive={true}
+      >
         <Newsletter />
       </RenderOnViewportEntry>
-      <RenderOnViewportEntry>
+      <RenderOnViewportEntry
+        placeholderCount={3}
+        minHeight={100}
+        suspenseActive={true}
+      >
         <ServiceContainer />
       </RenderOnViewportEntry>
     </>

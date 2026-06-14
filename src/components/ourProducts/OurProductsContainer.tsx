@@ -8,9 +8,9 @@ import { useFilterData } from "../../hooks/useFilterData";
 import { ErrorActive } from "../common/ErrorActive";
 import { OurProductsCategory } from "./OurProductsCategory";
 import { ProductsContainer } from "../common/ProductsContainer";
-import { LoadingSpiner } from "../common/LoadingSpiner";
 import { CiWarning } from "react-icons/ci";
 import { ErrorItem } from "../common/ErrorItem";
+import { Skeleton } from "../common/Skeleton.tsx/Skeleton";
 
 
 const OurProductsContainer = () => {
@@ -20,7 +20,7 @@ const OurProductsContainer = () => {
     filterValue: slug,
   });
 
-  if (isPending) return <LoadingSpiner />;
+  if (isPending) return <Skeleton placeholdersCount={5} skeletonHeight={400} />;
 
   if (isError) return <ErrorActive error={error} />;
 

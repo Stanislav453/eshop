@@ -5,9 +5,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
 import { SectionArrowHeader } from "../shopCategories/SectionHeader";
 import { CustomerReviews } from "./CustomerReviews";
-import { LoadingSpiner } from "../common/LoadingSpiner";
 import { ErrorItem } from "../common/ErrorItem";
 import { CiWarning } from "react-icons/ci";
+import { Skeleton } from "../common/Skeleton.tsx/Skeleton";
 
  const CustomerReviewsContainer = () => {
   const { data, isPending, error, isError } = useGetData<CustomerReviewType[]>({
@@ -28,7 +28,7 @@ import { CiWarning } from "react-icons/ci";
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  if (isPending) return <LoadingSpiner />;
+  if (isPending) return <Skeleton placeholdersCount={5} skeletonHeight={400} />;
 
   if (isError) return <ErrorActive error={error} />;
 

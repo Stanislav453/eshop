@@ -82,6 +82,23 @@ export type AdvertisingBannersType = {
   key: number;
 };
 
+export type SkeletonHeight = 100 | 150 | 300 | 325 | 350 | 400 | 700 | 1200;
+
+export type LoadSkeletonProps = {
+  placeholdersCount?: number;
+  skeletonHeight: SkeletonHeight;
+};
+
+export type RenderOnViewportEntryProps = {
+  minHeight: SkeletonHeight;
+  children: React.ReactNode;
+  suspenseActive: boolean;
+  threshold?: number;
+  root?: Element | null;
+  rootMargin?: string;
+  placeholderCount?: number;
+} & React.HTMLAttributes<HTMLDivElement>;
+
 export type UseGetDataType = {
   endpoint: "categories" | "products" | "customerReviews";
 };
