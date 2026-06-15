@@ -1,7 +1,7 @@
 import { advertisingBaners } from "../../utils/advertisingBaners.tsx";
 import { AdvertisingBannersView } from "./AdvertisingBannersView";
 
-export const AdvertisingBannersContainer = () => {
+ const AdvertisingBannersContainer = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-6 lg:gap-16">
       {advertisingBaners.map((baner, index) => (
@@ -10,3 +10,5 @@ export const AdvertisingBannersContainer = () => {
     </div>
   );
 };
+
+export default AdvertisingBannersContainer;

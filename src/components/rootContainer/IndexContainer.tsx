@@ -1,24 +1,24 @@
+import { lazy } from "react";
 import ShopHeroContainer from "../shopHeroContainer/ShopHeroContainer";
 import ShopCategoriesContainer from "../shopCategories/ShopCategoriesContainer";
 import OurProductsContainer from "../ourProducts/OurProductsContainer";
-import OfferBanner from "../offerBanner/OfferBanner";
 import SpecialOffersContainer from "../specialOffers/SpecialOffersContainer";
-import BrandContainer from "../brandLogo/BrandContainer";
 import CustomerReviewsContainer from "../customerReviews/CustomerReviewsContainer";
-import Newsletter from "../newsletter/Newsletter";
-import ServiceContainer from "../service/ServiceContainer";
 import RenderOnViewportEntry from "../common/renderOnViewportEntry/RenderOnViewportEntry";
-import { AdvertisingBannersContainer } from "../shopCategories/AdvertisingBannersContainer";
+
+const AdvertisingBannersContainer = lazy(
+  () => import("../shopCategories/AdvertisingBannersContainer"),
+);
+const OfferBanner = lazy(() => import("../offerBanner/OfferBanner"));
+const BrandContainer = lazy(() => import("../brandLogo/BrandContainer"));
+const Newsletter = lazy(() => import("../newsletter/Newsletter"));
+const ServiceContainer = lazy(() => import("../service/ServiceContainer"));
 
 export const IndexContainer = () => {
   return (
     <>
       <ShopHeroContainer />
-      <RenderOnViewportEntry
-        placeholderCount={5}
-        minHeight={325}
-        suspenseActive={false}
-      >
+      <RenderOnViewportEntry minHeight={325} suspenseActive={false}>
         <ShopCategoriesContainer />
       </RenderOnViewportEntry>
       <RenderOnViewportEntry
@@ -48,10 +48,7 @@ export const IndexContainer = () => {
       >
         <BrandContainer />
       </RenderOnViewportEntry>
-      <RenderOnViewportEntry
-        minHeight={300}
-        suspenseActive={true}
-      >
+      <RenderOnViewportEntry minHeight={300} suspenseActive={false}>
         <CustomerReviewsContainer />
       </RenderOnViewportEntry>
       <RenderOnViewportEntry
