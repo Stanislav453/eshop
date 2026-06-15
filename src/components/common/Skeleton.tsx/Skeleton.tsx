@@ -1,10 +1,13 @@
 import type { LoadSkeletonProps } from "../../../type";
 
-export const Skeleton = ({ placeholdersCount, skeletonHeight }: LoadSkeletonProps) => {
+export const Skeleton = ({
+  placeholdersCount,
+  skeletonHeight,
+}: LoadSkeletonProps) => {
   const placeholders = Array.from(Array(placeholdersCount).keys());
 
   return (
-    <ul className="flex gap-6 animate-pulse w-full">
+    <ul className="flex gap-6 flex-col sm:flex-row animate-pulse w-full">
       {placeholders.map((placeholder) => (
         <li
           style={{ height: `${skeletonHeight}px` }}
