@@ -14,24 +14,26 @@ const useFirstViewportEntry = ({
   observerOptions,
 }: useFirstViewportEntryType) => {
   const [entered, setEntered] = useState(false);
-
-  const observer = useRef(
-    new IntersectionObserver(
-      ([entry]) => setEntered(entry.isIntersecting),
-      observerOptions,
-    ),
-  );
+  const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const element = ref.current;
-    const ob = observer.current;
-
     if (entered) {
-      ob.disconnect();
+      observer.current?.disconnect();
       return;
     }
 
-    if (element && !entered) ob.observe(element);
+    if (observer.current === null) {
+      observer.current = new IntersectionObserver(
+        ([entry]) => setEntered(entry.isIntersecting),
+        observerOptions,
+      );
+    }
+
+    const ob = observer.current;
+    if (!ob) return;
+
+    const element = ref.current;
+    if (element) ob.observe(element);
 
     return () => ob.disconnect();
   }, [entered, ref]);
