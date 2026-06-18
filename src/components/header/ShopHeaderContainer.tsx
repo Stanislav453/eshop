@@ -1,15 +1,8 @@
-import {
-  CiCircleRemove,
-  CiHeadphones,
-  CiHeart,
-  CiSearch,
-  CiShoppingBasket,
-  CiUser,
-} from "react-icons/ci";
-import { Link } from "@tanstack/react-router";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
-import elesaLogo from "../../../public/elesaLogo.webp"
+import elesaLogo from "../../../public/elesaLogo.webp";
+import { ShopHeaderMenuView } from "./ShopHeaderMenuView";
+import { ShopHeaderIconsView } from "./ShopHeaderIconsView";
 
 export const ShopHeaderContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,70 +26,8 @@ export const ShopHeaderContainer = () => {
       <button className="w-[106px] py-3">
         <img src={elesaLogo} alt="elesa_logo" />
       </button>
-      <div className="flex gap-4 lg:gap-8">
-        <button onClick={() => setIsOpen(true)}>
-          <RxHamburgerMenu className="block lg:hidden text-[1.3rem]" />
-        </button>
-        <button>
-          <CiSearch className="text-[1.3rem]" />
-        </button>
-        <Link to="/" className="flex items-center">
-          <CiUser className="text-[1.3rem]" />
-        </Link>
-        <Link to="/" className="flex items-center">
-          <CiHeart className="text-[1.3rem]" />
-        </Link>
-        <button>
-          <CiShoppingBasket className="text-[1.3rem]" />
-        </button>
-      </div>
-      {isOpen && (
-        <div className="w-full h-full fixed top-0 left-0 z-[50] bg-black-rgba">
-          <nav className="bg-white w-[315px] h-full">
-            <div className="w-full flex justify-end">
-              <button onClick={() => setIsOpen(false)}>
-                <CiCircleRemove className="text-[2.5rem] m-3" />
-              </button>
-            </div>
-            <a
-              href="tel:+123456789"
-              className="flex items-center justify-center gap-2 w-full p-2 text-neutral-tertiary bg-gradient-to-r from-blue-600 to-red-600"
-            >
-              <span>
-                <CiHeadphones className="text-[1.5rem]" />
-              </span>
-              <span className="text-[1.3rem]">+123456789</span>
-            </a>
-            <ul className="font-bold">
-              <li>
-                <a href="#" className="block py-3 pl-2 border-b">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="block py-3 pl-2 border-b">
-                  Shop
-                </a>
-              </li>
-              <li>
-                <a href="#" className="block py-3 pl-2 border-b">
-                  Collection
-                </a>
-              </li>
-              <li>
-                <a href="#" className="block py-3 pl-2 border-b">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="block py-3 pl-2 border-b">
-                  Pages
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      )}
+      <ShopHeaderIconsView setIsOpen={setIsOpen} />
+      {isOpen && <ShopHeaderMenuView setIsOpen={setIsOpen} />}
     </div>
   );
 };
