@@ -1,5 +1,5 @@
 import { NextButtonView } from "./NextButtonView";
-import { PrevButtonView } from "./PrewButtonView";
+import { PrevButtonView } from "./PrevButtonView";
 
 type SectionArrowHeaderType = {
   title: string;

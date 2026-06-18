@@ -55,9 +55,11 @@ export const ErrorActive = ({ error }: ErrorActiveProps) => {
       );
     }
   } else {
-    <div className="text-red-500">
-      We have a problem and are trying to resolve it. Please refresh the page
-      later.
-    </div>;
+    return (
+      <div className="text-red-500">
+        We have a problem and are trying to resolve it. Please refresh the page
+        later.
+      </div>
+    );
   }
 };

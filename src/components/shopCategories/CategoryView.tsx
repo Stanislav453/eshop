@@ -1,7 +1,8 @@
 import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useEffect, useState } from "react";
-import { CategoryItem } from "./CategoryItemView";
+import { CategoryItemContainer } from "./CategoryItemContainer";
+// import { CategoryItem } from "./CategoryItemContainer";
 
 const BREAKPOINT = 1024;
 
@@ -44,7 +45,7 @@ export const CategoryView = () => {
         </button>
       </div>
 
-      <CategoryItem isOpen={isOpen} />
+      <CategoryItemContainer isOpen={isOpen} />
     </div>
   );
 };
