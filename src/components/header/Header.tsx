@@ -1,6 +1,6 @@
 import { DashboardLayout } from "../common/DashboardLayout";
 import { HeaderTopView } from "./HeaderTopView";
-import { ShopHeaderView } from "./ShopHeaderView";
+import { ShopHeaderContainer } from "./ShopHeaderContainer";
 
 export const Header = () => {
   return (
@@ -10,7 +10,7 @@ export const Header = () => {
       </DashboardLayout>
       <hr />
       <DashboardLayout>
-        <ShopHeaderView />
+        <ShopHeaderContainer />
       </DashboardLayout>
     </header>
   );

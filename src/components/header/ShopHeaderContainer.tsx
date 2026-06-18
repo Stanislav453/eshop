@@ -11,7 +11,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import elesaLogo from "../../../public/elesaLogo.webp"
 
-export const ShopHeaderView = () => {
+export const ShopHeaderContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

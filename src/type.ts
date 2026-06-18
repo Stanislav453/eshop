@@ -9,7 +9,7 @@ type CommentType = {
 };
 
 export enum CategoryOptions {
-  DSLRcamera = "DSLR cmaera",
+  DSLRcamera = "DSLR camera",
   Mouse = "Mouse",
   TVscreen = "TV screen",
   Computer = "Computer",

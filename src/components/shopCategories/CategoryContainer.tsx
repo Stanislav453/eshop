@@ -2,11 +2,10 @@ import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { CategoryItemContainer } from "./CategoryItemContainer";
-// import { CategoryItem } from "./CategoryItemContainer";
 
 const BREAKPOINT = 1024;
 
-export const CategoryView = () => {
+export const CategoryContainer = () => {
   const [isOpen, setIsOpen] = useState(() => {
     if (typeof window === "undefined") return true;
     return window.innerWidth > BREAKPOINT;

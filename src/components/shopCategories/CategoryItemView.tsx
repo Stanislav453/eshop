@@ -1,5 +1,3 @@
-import React from "react";
-
 type CategoryItemViewProps = {
     title: string
     src: string
