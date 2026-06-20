@@ -2,7 +2,7 @@ import type { ComponentPropsWithRef } from "react";
 
 type CommentType = {
   createdAt: string;
-  nickNAME: string;
+  nickName : string;
   comment: string;
   id: string;
   productId: string;
@@ -23,7 +23,7 @@ export enum CategoryOptions {
 export enum FilterSlugOptions {
   DSLRcamera = "dslr-camera",
   Mouse = "mouse",
-  TVscreen = "tv-scren",
+  TVscreen = "tv-screen",
   Computer = "computer",
   Pendrive = "pendrive",
   Headphones = "headphones",
