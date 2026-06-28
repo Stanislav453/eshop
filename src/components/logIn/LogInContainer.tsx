@@ -1,4 +1,4 @@
-import { LogInForm } from "./LoginForm"
+import { LogInForm } from "./LogInForm"
 import { SignUpPrompt } from "./SignUpPrompt"
 
 export const LogInContainer = () => {
