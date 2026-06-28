@@ -1,5 +1,5 @@
-    
-const LoginForm = () => {
+export 
+const LogInForm = () => {
   return (
     <form className="flex flex-col gap-8 mt-8" action="post">
       <ul className="flex flex-col gap-8 mt-8">
@@ -34,4 +34,3 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
