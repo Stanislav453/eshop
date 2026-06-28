@@ -1,5 +1,10 @@
 import { aboutRoute } from "./pages/aboutRoute";
 import { indexRoute } from "./pages/indexRoute";
+import { logInRoute } from "./pages/logInRoute";
 import { rootRoute } from "./rootRoute";
 
-export const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
+export const routeTree = rootRoute.addChildren([
+  indexRoute,
+  aboutRoute,
+  logInRoute,
+]);
