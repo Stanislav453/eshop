@@ -5,7 +5,6 @@ import { ShopHeaderContainer } from "./ShopHeaderContainer";
 export const Header = () => {
   return (
     <header>
-      sdVGsUcvuSDcCbSJHcsDhcbcb
       <DashboardLayout>
         <HeaderTopView />
       </DashboardLayout>
