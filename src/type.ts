@@ -8,6 +8,11 @@ type CommentType = {
   productId: string;
 };
 
+export type FormContainerType = {
+  children: React.ReactNode;
+  hightText: "Login" | "Register";
+};
+
 export enum CategoryOptions {
   DSLRcamera = "DSLR camera",
   Mouse = "Mouse",
