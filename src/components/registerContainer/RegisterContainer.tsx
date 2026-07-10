@@ -5,6 +5,7 @@ import { RegisterForm } from "./RegisterForm";
 import { handlerRegisterSubmit } from "./handlerRegisterSubmit";
 
 export const RegisterContainer = () => {
+
   return (
     <FormContainer hightText="Register">
       <Formik
@@ -27,7 +28,7 @@ export const RegisterContainer = () => {
           resetForm();
         }}
       >
-        <RegisterForm />
+        <RegisterForm  />
       </Formik>
     </FormContainer>
   );
