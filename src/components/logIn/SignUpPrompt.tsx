@@ -7,7 +7,7 @@ export const SignUpPrompt = () => {
         Don't have an account?{" "}
         <Link
           className="text-brand-color font-bold hover:text-primary-hover cursor-pointer transition-colors duration-300"
-          to="/sign-up"
+          to="/register"
         >
           Sign Up
         </Link>
