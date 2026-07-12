@@ -1,9 +1,10 @@
 import { lazy, Suspense, useRef } from "react";
+import { Skeleton } from "../common/Skeleton.tsx/Skeleton";
 import useFirstViewportEntry from "../../hooks/useFirstViewportEntry";
 
-const CustomerReviewsContent = lazy(() => import("./CustomerReviewsContent"));
+const OfferBannerView = lazy(() => import("./OfferBannerView"));
 
-export const CustomerReviewsContainer = () => {
+export const OfferBannerContainer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   const entered = useFirstViewportEntry({
@@ -14,12 +15,13 @@ export const CustomerReviewsContainer = () => {
       rootMargin: "0px",
     },
   });
-
   return (
-    <section ref={sectionRef} style={{ minHeight: 150 }}>
+    <section style={{ minHeight: 450 }} ref={sectionRef}>
       {entered && (
-        <Suspense fallback={<div>Loading...</div>}>
-          <CustomerReviewsContent />
+        <Suspense
+          fallback={<Skeleton placeholdersCount={1} skeletonHeight={350} />}
+        >
+          <OfferBannerView />
         </Suspense>
       )}
     </section>

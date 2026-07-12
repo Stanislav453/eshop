@@ -1,48 +1,27 @@
-import { useGetData } from "../../hooks/useGetData";
-import type { ProductType } from "../../type";
-import { offersTime } from "./offersTime";
-import { useNow } from "../../hooks/useNow";
-import { ErrorActive } from "../common/ErrorActive";
-import { ProductsContainer } from "../common/ProductsContainer";
-import { ErrorItem } from "../common/ErrorItem";
-import { CiWarning } from "react-icons/ci";
-import { Skeleton } from "../common/Skeleton.tsx/Skeleton";
+import { lazy, Suspense, useRef } from "react";
+import useFirstViewportEntry from "../../hooks/useFirstViewportEntry";
 
-const SpecialOffersContainer = () => {
-  const now = useNow();
+const SpecialOffersContent = lazy(() => import("./SpecialOffersContent"));
 
-  const { data, isPending, isError, error } = useGetData<ProductType[]>({
-    endpoint: "products",
+export const SpecialOffersContainer = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  const entered = useFirstViewportEntry({
+    ref: sectionRef,
+    observerOptions: {
+      threshold: 0,
+      root: null,
+      rootMargin: "0px",
+    },
   });
 
-  if (isPending) return <Skeleton placeholdersCount={3} skeletonHeight={700} />;
-
-  if (isError) return <ErrorActive error={error} />;
-
-  if (data.length === 0)
-    return (
-      <ErrorItem
-        icon={CiWarning}
-        color="text-yellow-500"
-        message="We have no products yet. Please check back later."
-      />
-    );
-
-  const specialOffers = data.filter((product) => product.specialOfferEnd > 0);
-
   return (
-    <>
-      <header>
-        <h2 className="text-section-title font-bold text-neutral-primary mt-16 mb-4">
-          Deal of the day
-        </h2>
-      </header>
-      <ProductsContainer
-        data={specialOffers}
-        getCountdown={(product) => offersTime(now, product.specialOfferEnd)}
-      />
-    </>
+    <section ref={sectionRef} style={{ minHeight: 1200 }}>
+      {entered && (
+        <Suspense fallback={<div>Loading special offers...</div>}>
+          <SpecialOffersContent />
+        </Suspense>
+      )}
+    </section>
   );
 };
-
-export default SpecialOffersContainer;
