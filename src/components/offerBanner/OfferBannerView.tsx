@@ -1,11 +1,13 @@
 import offerBanner from "../../../public/offer-banner-second.webp";
 
-const OfferBanner = () => {
+
+ const OfferBannerView = () => {
   return (
     <a href="#">
       <img src={offerBanner} alt="Offer Banner" />
     </a>
-  );
-};
+  )
+}
 
-export default OfferBanner;
+export default OfferBannerView;
+

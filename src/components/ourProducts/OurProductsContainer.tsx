@@ -1,47 +1,26 @@
-import { useState } from "react";
-import {
-  FilterSlugOptions,
-  type FilterValue,
-  type ProductType,
-} from "../../type";
-import { useFilterData } from "../../hooks/useFilterData";
-import { ErrorActive } from "../common/ErrorActive";
-import { OurProductsCategory } from "./OurProductsCategory";
-import { ProductsContainer } from "../common/ProductsContainer";
-import { CiWarning } from "react-icons/ci";
-import { ErrorItem } from "../common/ErrorItem";
-import { Skeleton } from "../common/Skeleton.tsx/Skeleton";
+import { lazy, Suspense, useRef } from "react";
+import useFirstViewportEntry from "../../hooks/useFirstViewportEntry";
 
+const OurProductsContent = lazy(() => import("./OurProductsContent"));
 
-const OurProductsContainer = () => {
-  const [slug, setSlug] = useState<FilterValue>(FilterSlugOptions.DSLRcamera);
+export const OurProductsContainer = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
-  const { data, isError, isPending, error } = useFilterData<ProductType[]>({
-    filterValue: slug,
+  const entered = useFirstViewportEntry({
+    ref: sectionRef,
+    observerOptions: {
+      threshold: 0,
+      root: null,
+      rootMargin: "0px",
+    },
   });
-
-  if (isPending) return <Skeleton placeholdersCount={5} skeletonHeight={400} />;
-
-  if (isError) return <ErrorActive error={error} />;
-
-  if (data.length === 0)
-    return (
-      <ErrorItem
-        icon={CiWarning}
-        color="text-yellow-500"
-        message="We have no products yet. Please check back later."
-      />
-    );
-
   return (
-    <>
-      <h2 className="text-section-title font-bold text-neutral-primary">
-        Our products
-      </h2>
-      <OurProductsCategory setSlug={setSlug} />
-      <ProductsContainer data={data} />
-    </>
+    <section style={{ minHeight: 400 }} ref={sectionRef}>
+      {entered && (
+        <Suspense fallback={<div>Loading our products...</div>}>
+          <OurProductsContent />
+        </Suspense>
+      )}
+    </section>
   );
 };
-  
-export default OurProductsContainer;

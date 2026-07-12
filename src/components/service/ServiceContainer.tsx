@@ -1,38 +1,29 @@
-import {
-  CiCreditCard1,
-  CiDeliveryTruck,
-  CiHeadphones,
-  CiRedo,
-} from "react-icons/ci";
-import { ServiceIcon } from "./ServiceIcon";
+import { lazy, Suspense, useRef } from "react";
+import { Skeleton } from "../common/Skeleton.tsx/Skeleton";
+import useFirstViewportEntry from "../../hooks/useFirstViewportEntry";
 
-const ServiceContainer = () => {
+const ServiceContent = lazy(() => import("./ServiceContent"));
+
+export const ServiceContainer = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  const entered = useFirstViewportEntry({
+    ref: sectionRef,
+    observerOptions: {
+      threshold: 0,
+      root: null,
+      rootMargin: "0px",
+    },
+  });
   return (
-    <>
-      <ul className="flex flex-wrap gap-8 justify-between mx-8">
-        <ServiceIcon
-          title="Free delivery"
-          desc="Orders from all item"
-          icon={<CiDeliveryTruck className="text-5xl" />}
-        />
-        <ServiceIcon
-          title="Easy returns"
-          desc="Easy returns"
-          icon={<CiRedo className="text-5xl" />}
-        />
-        <ServiceIcon
-          title="Online support"
-          desc="Always online 24/7"
-          icon={<CiHeadphones className="text-5xl" />}
-        />
-        <ServiceIcon
-          title="Secure payment"
-          desc="100% Secure payment"
-          icon={<CiCreditCard1 className="text-5xl" />}
-        />
-      </ul>
-    </>
+    <section ref={sectionRef} style={{ minHeight: 100 }}>
+      {entered && (
+        <Suspense
+          fallback={<Skeleton placeholdersCount={4} skeletonHeight={100} />}
+        >
+          <ServiceContent />
+        </Suspense>
+      )}
+    </section>
   );
 };
-
-export default ServiceContainer;

@@ -2,7 +2,7 @@ import { SliderContainer } from "./SliderContainer";
 import offerBanner from "../../../public/offer-banner.webp"
 import { CategoryContainer } from "../shopCategories/CategoryContainer";
 
-const  ShopHeroContainer = () => {
+export const  ShopHeroContainer = () => {
   return (
       <section className="flex flex-wrap lg:flex-nowrap gap-8 w-full pt-4">
         <CategoryContainer />
@@ -20,4 +20,3 @@ const  ShopHeroContainer = () => {
 };
 
 
-export default ShopHeroContainer;

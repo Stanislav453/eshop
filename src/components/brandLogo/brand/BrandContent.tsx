@@ -1,10 +1,10 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect } from "react";
-import { BrandView } from "./BrandView";
-import { brandLogos } from "./brandLogo";
+import { BrandView } from "../BrandView";
+import { brandLogos } from "../brandLogo";
 
-const BrandContainer = () => {
+const BrandContent = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start", containScroll: "trimSnaps" },
     [Autoplay()],
@@ -32,4 +32,4 @@ const BrandContainer = () => {
   );
 };
 
-export default BrandContainer;
+export default BrandContent;

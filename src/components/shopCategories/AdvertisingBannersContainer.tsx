@@ -1,14 +1,32 @@
-import { advertisingBaners } from "../../utils/advertisingBaners.tsx";
-import { AdvertisingBannersView } from "./AdvertisingBannersView";
+import { lazy, Suspense, useRef } from "react";
+import useFirstViewportEntry from "../../hooks/useFirstViewportEntry.tsx";
+import { Skeleton } from "../common/Skeleton.tsx/Skeleton.tsx";
 
- const AdvertisingBannersContainer = () => {
+const AdvertisingBannersContent = lazy(
+  () => import("./AdvertisingBannersContent.tsx"),
+);
+
+export const AdvertisingBannersContainer = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  const entered = useFirstViewportEntry({
+    ref: sectionRef,
+    observerOptions: {
+      threshold: 0,
+      root: null,
+      rootMargin: "0px",
+    },
+  });
+
   return (
-    <div className="flex flex-col lg:flex-row gap-6 lg:gap-16">
-      {advertisingBaners.map((baner, index) => (
-        <AdvertisingBannersView key={index} text={baner.text} src={baner.src} />
-      ))}
-    </div>
+    <section style={{ minHeight: 700 }} ref={sectionRef}>
+      {entered && (
+        <Suspense
+          fallback={<Skeleton placeholdersCount={3} skeletonHeight={700} />}
+        >
+          <AdvertisingBannersContent />
+        </Suspense>
+      )}
+    </section>
   );
 };
-
-export default AdvertisingBannersContainer;

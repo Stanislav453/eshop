@@ -1,58 +1,26 @@
-import useEmblaCarousel from "embla-carousel-react";
-import { ImageCarousel } from "./ImageCarousel";
-import { usePrevNextButtons } from "../../hooks/usePrevNextButtons";
-import { useGetData } from "../../hooks/useGetData";
-import type { CategoryType } from "../../type";
-import { SectionArrowHeader } from "./SectionHeader";
-import { ErrorActive } from "../common/ErrorActive";
-import { ErrorItem } from "../common/ErrorItem";
-import { CiWarning } from "react-icons/ci";
-import { Skeleton } from "../common/Skeleton.tsx/Skeleton";
+import { lazy, Suspense, useRef } from "react";
+import useFirstViewportEntry from "../../hooks/useFirstViewportEntry";
 
-const ShopCategoriesContainer = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "start",
-    containScroll: "trimSnaps",
-    dragFree: false,
+const ShopCategoriesContent = lazy(() => import("./ShopCategoriesContent"));
+
+export const ShopCategoriesContainer = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  const entered = useFirstViewportEntry({
+    ref: sectionRef,
+    observerOptions: {
+      threshold: 0,
+      root: null,
+      rootMargin: "0px",
+    },
   });
-
-  const { data, isError, isPending, error } = useGetData<CategoryType[]>({
-    endpoint: "categories",
-  });
-
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
-
-  if (isPending) return <Skeleton placeholdersCount={5} skeletonHeight={400} />;
-
-  if (isError) return <ErrorActive error={error} />;
-
-  if (data.length === 0)
-    return (
-      <ErrorItem
-        icon={CiWarning}
-        color="text-yellow-500"
-        message="We have no products yet. Please check back later."
-      />
-    );
-
   return (
-    <>
-      <SectionArrowHeader
-        title="Shop categories"
-        onPrevButtonClick={onPrevButtonClick}
-        onNextButtonClick={onNextButtonClick}
-        prevBtnDisabled={prevBtnDisabled}
-        nextBtnDisabled={nextBtnDisabled}
-      />
-      <ImageCarousel data={data} emblaRef={emblaRef} />
-    </>
+    <section ref={sectionRef} style={{ minHeight: 300 }}>
+      {entered && (
+        <Suspense fallback={<div>Loading shop categories...</div>}>
+          <ShopCategoriesContent />
+        </Suspense>
+      )}
+    </section>
   );
 };
-
-export default ShopCategoriesContainer;

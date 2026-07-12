@@ -1,10 +1,7 @@
 import type { AdvertisingBannersType } from "../../type";
 import { MdArrowOutward } from "react-icons/md";
 
-export const AdvertisingBannersView = ({
-  text,
-  src,
-}: AdvertisingBannersType) => {
+export const AdvertisingBannersView = ({ text, src }: AdvertisingBannersType) => {
   return (
     <div className="h-baners group overflow-hidden relative cursor-pointer">
       <div className="absolute z-10 w-full flex justify-around items-center mt-10 px-8">
@@ -23,3 +20,4 @@ export const AdvertisingBannersView = ({
     </div>
   );
 };
+
