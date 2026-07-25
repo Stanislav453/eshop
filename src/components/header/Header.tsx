@@ -4,7 +4,7 @@ import { ShopHeaderContainer } from "./ShopHeaderContainer";
 
 export const Header = () => {
   return (
-    <header>
+    <header className="px-6 md:px-0">
       <DashboardLayout>
         <HeaderTopView />
       </DashboardLayout>

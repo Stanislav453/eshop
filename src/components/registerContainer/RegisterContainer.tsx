@@ -6,6 +6,8 @@ import { handlerRegisterSubmit } from "./handlerRegisterSubmit";
 
 export const RegisterContainer = () => {
 
+
+
   return (
     <FormContainer hightText="Register">
       <Formik
