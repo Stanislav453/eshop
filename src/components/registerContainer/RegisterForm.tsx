@@ -3,7 +3,7 @@ import { TextInput } from "../common/form/TextInput";
 import { Checkbox } from "../common/form/CheckBox";
 
 export const RegisterForm = () => {
- 
+
 
   return (
     <Form className="flex flex-col gap-4">

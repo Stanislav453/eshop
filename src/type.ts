@@ -25,6 +25,12 @@ export enum CategoryOptions {
   Radio = "Radio",
 }
 
+export type PopupStateType = {
+  text: string;
+  setText: (newText: string) => void;
+  closePopup: () => void;
+};
+
 export enum FilterSlugOptions {
   DSLRcamera = "dslr-camera",
   Mouse = "mouse",

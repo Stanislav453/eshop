@@ -6,6 +6,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./queryClient";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { router } from "./routes/createRoute";
+import { Popup } from "./components/popup/Popup";
 
 const rootElement = document.getElementById("root")!;
 if (!rootElement.innerHTML) {
@@ -15,6 +16,7 @@ if (!rootElement.innerHTML) {
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools />
         <RouterProvider router={router} />
+        <Popup />
       </QueryClientProvider>
     </StrictMode>,
   );
