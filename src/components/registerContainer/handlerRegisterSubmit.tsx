@@ -1,12 +1,6 @@
 import axios from "axios";
 import { usePopup } from "../../store/usePopup";
-
-type handlerRegisterSubmitType = {
-  firstName: string;
-  secondName: string;
-  email: string;
-  password: string;
-};
+import type { handlerRegisterSubmitType } from "../../type";
 
 export const handlerRegisterSubmit = ({
   firstName,
@@ -28,8 +22,5 @@ export const handlerRegisterSubmit = ({
     .catch((error) => {
       usePopup.getState().setText("Registration failed. Please try again.");
       console.log(error);
-    })
-    .finally(() => {
-      console.log("Request completed");
     });
 };

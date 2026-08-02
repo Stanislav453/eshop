@@ -25,6 +25,13 @@ export enum CategoryOptions {
   Radio = "Radio",
 }
 
+export type handlerRegisterSubmitType = {
+  firstName: string;
+  secondName: string;
+  email: string;
+  password: string;
+};
+
 export type PopupStateType = {
   text: string;
   setText: (newText: string) => void;
