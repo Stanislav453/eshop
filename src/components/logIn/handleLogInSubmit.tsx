@@ -11,9 +11,6 @@ export const handleLogInSubmit = ({
     .get(`https://696cdbeff4a79b31517ff504.mockapi.io//user?email=${email}`)
     .then((response) => {
       const user = response.data[0];
-
-      console.log(bcrypt.compareSync(password, user.password));
-
       if (user && bcrypt.compareSync(password, user.password)) {
         usePopup.getState().setText("Login successful!");
       } else {
