@@ -2,7 +2,7 @@ import type { ComponentPropsWithRef } from "react";
 
 type CommentType = {
   createdAt: string;
-  nickName : string;
+  nickName: string;
   comment: string;
   id: string;
   productId: string;
@@ -11,6 +11,11 @@ type CommentType = {
 export type FormContainerType = {
   children: React.ReactNode;
   hightText: "Login" | "Register";
+};
+
+export type handlerLogInSubmitType = {
+  email: string;
+  password: string;
 };
 
 export enum CategoryOptions {
