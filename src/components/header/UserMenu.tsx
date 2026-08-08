@@ -1,4 +1,3 @@
-import React from "react";
 import { CiLogout, CiSettings } from "react-icons/ci";
 import type { UserType } from "../../type";
 import { useUser } from "../../store/useUser";
