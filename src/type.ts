@@ -37,6 +37,20 @@ export type handlerRegisterSubmitType = {
   password: string;
 };
 
+export type UserType = {
+  id: string;
+  firstName: string;
+  secondName: string;
+  email: string;
+  isAdmin: boolean;
+};
+
+export type UserStateType = {
+  user: UserType | null;
+  setUser: (user: UserType) => void;
+  logout: () => void;
+};
+
 export type PopupStateType = {
   text: string;
   setText: (newText: string) => void;
