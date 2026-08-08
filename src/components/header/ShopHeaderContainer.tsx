@@ -2,7 +2,7 @@ import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 import elesaLogo from "../../../public/elesaLogo.webp";
 import { ShopHeaderMenuView } from "./ShopHeaderMenuView";
-import { ShopHeaderIconsView } from "./ShopHeaderIconsView";
+import { ShopHeaderUserMenu } from "./ShopHeaderUserMenu";
 
 export const ShopHeaderContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +26,7 @@ export const ShopHeaderContainer = () => {
       <button className="w-[106px] py-3">
         <img src={elesaLogo} alt="elesa_logo" />
       </button>
-      <ShopHeaderIconsView setIsOpen={setIsOpen} />
+      <ShopHeaderUserMenu setIsOpen={setIsOpen} />
       {isOpen && <ShopHeaderMenuView setIsOpen={setIsOpen} />}
     </div>
   );

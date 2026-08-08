@@ -20,9 +20,7 @@ export const RegisterContainer = () => {
         validationSchema={registerValSchema}
         onSubmit={(values, { resetForm }) => {
           const salt = bcrypt.genSaltSync(10);
-
-          console.log(values);
-
+          
           handlerRegisterSubmit({
             firstName: values.firstName,
             secondName: values.lastName,

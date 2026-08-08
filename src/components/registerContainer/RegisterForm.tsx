@@ -3,8 +3,6 @@ import { TextInput } from "../common/form/TextInput";
 import { Checkbox } from "../common/form/CheckBox";
 
 export const RegisterForm = () => {
-
-
   return (
     <Form className="flex flex-col gap-4">
       <TextInput label="First Name" name="firstName" type="text" />
@@ -19,7 +17,12 @@ export const RegisterForm = () => {
       <Checkbox name="acceptedTerms">
         I accept the terms and conditions
       </Checkbox>
-      <button type="submit">Submit</button>
+      <button
+        className="self-center mt-8 px-8 py-4 bg-brand-color text-white font-bold bg-neutral-primary hover:bg-primary-hover cursor-pointer transition-colors duration-300"
+        type="submit"
+      >
+        Submit
+      </button>
     </Form>
   );
 };
