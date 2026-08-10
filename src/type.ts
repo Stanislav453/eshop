@@ -91,6 +91,7 @@ export type ProductType = {
   sku: string;
   availability: boolean;
   comments: CommentType[];
+  slug: string;
 };
 
 export type CategoryType = {
