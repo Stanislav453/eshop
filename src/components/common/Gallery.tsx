@@ -6,16 +6,16 @@ type PmGalleryProps = {
 };
 
 export const Gallery = ({ images }: PmGalleryProps) => {
-  const [galleryImages, setGalleryImages] = useState<string[] | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
-  const openGallery = (images: string[], index: number) => {
-    setGalleryImages(images);
+  const openGallery = (index: number) => {
     setGalleryIndex(index);
+    setIsGalleryOpen(true);
   };
 
   const closeGallery = () => {
-    setGalleryImages(null);
+    setIsGalleryOpen(false);
   };
 
   return (
@@ -29,7 +29,7 @@ export const Gallery = ({ images }: PmGalleryProps) => {
                 src={image}
                 alt="img"
                 onClick={() => {
-                  openGallery(images, index);
+                  openGallery(index);
                 }}
               />
             </li>
@@ -37,9 +37,9 @@ export const Gallery = ({ images }: PmGalleryProps) => {
         })}
       </ul>
 
-      {galleryImages && (
+      {isGalleryOpen && (
         <ManagerGallery
-          images={galleryImages}
+          images={images}
           initialIndex={galleryIndex}
           onClose={closeGallery}
         />
