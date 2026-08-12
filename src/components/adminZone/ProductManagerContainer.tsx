@@ -8,6 +8,7 @@ import { PmItemView } from "./PmItemView";
 import { Gallery } from "../common/Gallery";
 import { PmDelUpButtons } from "./PmDelUpButtons";
 import { PmEditForm } from "./PmEditForm";
+import { CreateProductContainer } from "./CreateProductContainer";
 
 export const ProductManagerContainer = () => {
   const { data, isPending, isError, error } = useGetData<ProductType[]>({
@@ -31,6 +32,7 @@ export const ProductManagerContainer = () => {
   return (
     <div className="m-4">
       <h2 className="text-2xl font-bold text-center py-3">Product Manager</h2>
+      <CreateProductContainer />
       <ul className="flex flex-col gap-2 bg-blue-300 p-2">
         {data.map((product) => {
           const {
@@ -69,7 +71,7 @@ export const ProductManagerContainer = () => {
                 </div>
                 <div className="mt-4">
                   <h5 className="font-bold">Preview images:</h5>
-                    <Gallery images={images} />
+                  <Gallery images={images} />
                 </div>
               </div>
               {isEditing ? (
@@ -99,10 +101,7 @@ export const ProductManagerContainer = () => {
                   <div>
                     <PmItemView desc="Description" title={description} />
                   </div>
-                  <PmDelUpButtons
-                    id={id}
-                    onEdit={() => setEditingId(id)}
-                  />
+                  <PmDelUpButtons id={id} onEdit={() => setEditingId(id)} />
                 </>
               )}
             </li>

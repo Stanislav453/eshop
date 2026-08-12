@@ -8,6 +8,19 @@ type CommentType = {
   productId: string;
 };
 
+export type CreateProductFormValues = {
+  title: string;
+  price: string;
+  rating: string;
+  discount: string;
+  specialOfferEnd: string;
+  brand: string;
+  description: string;
+  category: CategoryOptions;
+  sku: string;
+  availability: boolean;
+};
+
 export type FormContainerType = {
   children: React.ReactNode;
   hightText: "Login" | "Register";
@@ -148,6 +161,10 @@ export type UseDeleteDataType = {
 };
 
 export type UseUpdateDataType = {
+  endpoint: EndpointOptions;
+};
+
+export type UseAddDataType = {
   endpoint: EndpointOptions;
 };
 
