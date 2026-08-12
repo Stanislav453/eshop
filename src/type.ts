@@ -147,6 +147,10 @@ export type UseDeleteDataType = {
   endpoint: EndpointOptions;
 };
 
+export type UseUpdateDataType = {
+  endpoint: EndpointOptions;
+};
+
 export type FilterValue = FilterSlugOptions;
 
 export type UseFilterDataType = {
