@@ -137,8 +137,14 @@ export type RenderOnViewportEntryProps = {
   placeholderCount?: number;
 } & React.HTMLAttributes<HTMLDivElement>;
 
+type EndpointOptions = "categories" | "products" | "customerReviews";
+
 export type UseGetDataType = {
-  endpoint: "categories" | "products" | "customerReviews";
+  endpoint: EndpointOptions;
+};
+
+export type UseDeleteDataType = {
+  endpoint: EndpointOptions;
 };
 
 export type FilterValue = FilterSlugOptions;

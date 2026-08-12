@@ -5,6 +5,7 @@ import { ErrorItem } from "../common/ErrorItem";
 import { CiWarning } from "react-icons/ci";
 import { PmItemView } from "./PmItemView";
 import { Gallery } from "../common/Gallery";
+import { PmDelUpButtons } from "./PmDelUpButtons";
 
 export const ProductManagerContainer = () => {
   const { data, isPending, isError, error } = useGetData<ProductType[]>({
@@ -85,6 +86,7 @@ export const ProductManagerContainer = () => {
                   </ul>
                 </div>
               </div>
+              <PmDelUpButtons id={id} />
             </li>
           );
         })}
