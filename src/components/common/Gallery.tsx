@@ -20,12 +20,12 @@ export const Gallery = ({ images }: PmGalleryProps) => {
 
   return (
     <>
-      <ul className="flex gap-2 flex-wrap">
+      <ul className="flex flex-row gap-2">
         {images.map((image, index) => {
           return (
             <li key={`gallery-${image}-${index}`}>
               <img
-                className="w-[200px] h-[200px] object-contain cursor-pointer"
+                className="w-[200px] object-contain cursor-pointer"
                 src={image}
                 alt="img"
                 onClick={() => {

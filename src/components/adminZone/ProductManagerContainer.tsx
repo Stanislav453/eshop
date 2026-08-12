@@ -53,7 +53,7 @@ export const ProductManagerContainer = () => {
           return (
             <li
               key={product.id}
-              className="flex gap-4 bg-blue-200 transition-all p-2"
+              className="flex gap-4 items-start bg-blue-200 transition-all p-2"
             >
               <div className="w-[20px] flex-none">
                 <span className="font-bold">Id:</span> {id}
@@ -69,9 +69,7 @@ export const ProductManagerContainer = () => {
                 </div>
                 <div className="mt-4">
                   <h5 className="font-bold">Preview images:</h5>
-                  <ul className="flex gap-2 flex-wrap">
                     <Gallery images={images} />
-                  </ul>
                 </div>
               </div>
               {isEditing ? (
