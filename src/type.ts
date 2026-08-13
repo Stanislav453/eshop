@@ -21,6 +21,10 @@ export type CreateProductFormValues = {
   availability: boolean;
 };
 
+export type PmEditFormValues = CreateProductFormValues & {
+  slug: string;
+};
+
 export type FormContainerType = {
   children: React.ReactNode;
   hightText: "Login" | "Register";

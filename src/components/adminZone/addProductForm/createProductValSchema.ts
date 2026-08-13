@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 import { CategoryOptions } from "../../../type";
 
-const requiredTrimmedString = (min: number) =>
+export const requiredTrimmedString = (min: number) =>
   Yup.string()
     .required("Required")
     .test(
@@ -11,7 +11,7 @@ const requiredTrimmedString = (min: number) =>
     )
     .min(min, `required to be at least ${min} characters`);
 
-const requiredNumber = () =>
+export const requiredNumber = () =>
   Yup.number()
     .transform((value, originalValue) =>
       String(originalValue).trim() === "" ? undefined : value,
