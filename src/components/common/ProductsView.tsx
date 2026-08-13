@@ -3,6 +3,7 @@ import { createImageUrl } from "../../utils/createImageUrl";
 import { ProductButtons } from "./ProductButtons";
 import { RatingContainer } from "../ourProducts/RatingContainer";
 import { CountDown } from "../specialOffers/CountDown";
+import { useGetProductDetail } from "../../store/useGetProductDetail";
 
 export const ProductsView = ({
   id,
@@ -17,6 +18,18 @@ export const ProductsView = ({
   hoverImage,
   countdown,
 }: ProductsViewType) => {
+  const { setproductDetail } = useGetProductDetail();
+
+  const saveProductDetail = () => {
+    setproductDetail({
+      title,
+      thumbnail,
+      price,
+      category,
+  })
+
+}
+
   return (
     <li className="w-full border" key={id}>
       <div className="flex items-center flex-col py-8 group">
@@ -67,7 +80,7 @@ export const ProductsView = ({
           </p>
         </div>
       </div>
-      <ProductButtons  />
+      <ProductButtons saveProductDetail={saveProductDetail}  />
     </li>
   );
 };

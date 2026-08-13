@@ -74,6 +74,19 @@ export type PopupStateType = {
   closePopup: () => void;
 };
 
+export type ProductDetailType = {
+  thumbnail: string;
+  title: string;
+  price: number;
+  category: string
+};
+
+export type ProductDetailStateType = {
+  productDetail: ProductDetailType | null;
+  setproductDetail: (newProductDetail: ProductDetailType) => void;
+  closeproductDetail: () => void;
+};
+
 export enum FilterSlugOptions {
   DSLRcamera = "dslr-camera",
   Mouse = "mouse",
