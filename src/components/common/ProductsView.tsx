@@ -4,19 +4,21 @@ import { ProductButtons } from "./ProductButtons";
 import { RatingContainer } from "../ourProducts/RatingContainer";
 import { CountDown } from "../specialOffers/CountDown";
 
-export const ProductsView = ({
-  id,
-  thumbnail,
-  title,
-  price,
-  discount,
-  rating,
-  category,
-  discountedPrice,
-  priceStyle,
-  hoverImage,
-  countdown,
-}: ProductsViewType) => {
+export const ProductsView = (props: ProductsViewType) => {
+  const {
+    id,
+    thumbnail,
+    title,
+    price,
+    discount,
+    rating,
+    category,
+    discountedPrice,
+    priceStyle,
+    hoverImage,
+    countdown,
+  } = props;
+
   return (
     <li className="w-full border" key={id}>
       <div className="flex items-center flex-col py-8 group">
@@ -67,7 +69,7 @@ export const ProductsView = ({
           </p>
         </div>
       </div>
-      <ProductButtons />
+      <ProductButtons product={props} />
     </li>
   );
 };

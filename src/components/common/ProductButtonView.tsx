@@ -3,12 +3,14 @@ import React from "react";
 type ProductButtonViewType = {
   title: string;
   icon: React.ElementType;
+  onClick?: () => void
 };
 
-export const ProductButtonView = ({ title, icon }: ProductButtonViewType) => {
+export const ProductButtonView = ({ title, icon, onClick }: ProductButtonViewType) => {
   const Icon = icon;
   return (
     <button
+    onClick={onClick}
       title={title}
       className=" w-full flex justify-center  py-4 hover:bg-gradient-to-r from-blue-600 to-red-600 group  transition-all duration-500
                   relative  after:content-[attr(title)]
