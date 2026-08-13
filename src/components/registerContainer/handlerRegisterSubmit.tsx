@@ -7,8 +7,8 @@ export const handlerRegisterSubmit = ({
   secondName,
   email,
   password,
-}: handlerRegisterSubmitType) => {
-  axios
+}: handlerRegisterSubmitType): Promise<boolean> => {
+  return axios
     .post("https://696cdbeff4a79b31517ff504.mockapi.io/user", {
       firstName,
       secondName,
@@ -18,9 +18,11 @@ export const handlerRegisterSubmit = ({
     })
     .then(() => {
       usePopup.getState().setText("Registration successful!");
+      return true;
     })
     .catch((error) => {
       usePopup.getState().setText("Registration failed. Please try again.");
       console.log(error);
+      return false;
     });
 };

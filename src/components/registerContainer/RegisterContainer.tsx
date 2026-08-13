@@ -4,6 +4,7 @@ import { registerValSchema } from "./registerValSchema";
 import { RegisterForm } from "./RegisterForm";
 import { handlerRegisterSubmit } from "./handlerRegisterSubmit";
 import bcrypt from "bcryptjs";
+import { handleLogInSubmit } from "../logIn/handleLogInSubmit";
 
 export const RegisterContainer = () => {
   return (
@@ -18,15 +19,23 @@ export const RegisterContainer = () => {
           acceptedTerms: false,
         }}
         validationSchema={registerValSchema}
-        onSubmit={(values, { resetForm }) => {
+        onSubmit={async (values, { resetForm }) => {
           const salt = bcrypt.genSaltSync(10);
-          
-          handlerRegisterSubmit({
+
+          const registered = await handlerRegisterSubmit({
             firstName: values.firstName,
             secondName: values.lastName,
             email: values.email,
             password: bcrypt.hashSync(values.password, salt),
           });
+
+          if (registered) {
+            await handleLogInSubmit({
+              email: values.email,
+              password: values.password,
+            });
+          }
+
           resetForm();
         }}
       >

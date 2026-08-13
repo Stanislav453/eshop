@@ -21,9 +21,9 @@ export const UserMenu = ({ user }: UserMenuProps) => {
       <button aria-label="Account settings">
         <CiSettings className="text-[1.3rem]" />
       </button>
-      <button aria-label="Log out" onClick={logout}>
+      <Link to="/" aria-label="Log out" onClick={logout}>
         <CiLogout className="text-[1.3rem]" />
-      </button>
+      </Link>
       {isAdmin && <Link to="/admin">Admin zone</Link>}
     </div>
   );

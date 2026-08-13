@@ -8,8 +8,8 @@ import bcrypt from "bcryptjs";
 export const handleLogInSubmit = ({
   email,
   password,
-}: handlerLogInSubmitType) => {
-  axios
+}: handlerLogInSubmitType): Promise<boolean> => {
+  return axios
     .get(`https://696cdbeff4a79b31517ff504.mockapi.io//user?email=${email}`)
     .then((response) => {
       const user = response.data[0];
@@ -20,12 +20,15 @@ export const handleLogInSubmit = ({
           .setUser({ id, firstName, secondName, email, isAdmin });
         usePopup.getState().setText("Login successful!");
         router.navigate({ to: "/" });
-      } else {
-        usePopup.getState().setText("Login failed. Please try again.");
+        return true;
       }
+
+      usePopup.getState().setText("Login failed. Please try again.");
+      return false;
     })
     .catch((error) => {
       usePopup.getState().setText("Login failed. Please try again.");
       console.log(error);
+      return false;
     });
 };

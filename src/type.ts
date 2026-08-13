@@ -8,6 +8,23 @@ type CommentType = {
   productId: string;
 };
 
+export type CreateProductFormValues = {
+  title: string;
+  price: string;
+  rating: string;
+  discount: string;
+  specialOfferEnd: string;
+  brand: string;
+  description: string;
+  category: CategoryOptions;
+  sku: string;
+  availability: boolean;
+};
+
+export type PmEditFormValues = CreateProductFormValues & {
+  slug: string;
+};
+
 export type FormContainerType = {
   children: React.ReactNode;
   hightText: "Login" | "Register";
@@ -137,8 +154,22 @@ export type RenderOnViewportEntryProps = {
   placeholderCount?: number;
 } & React.HTMLAttributes<HTMLDivElement>;
 
+type EndpointOptions = "categories" | "products" | "customerReviews";
+
 export type UseGetDataType = {
-  endpoint: "categories" | "products" | "customerReviews";
+  endpoint: EndpointOptions;
+};
+
+export type UseDeleteDataType = {
+  endpoint: EndpointOptions;
+};
+
+export type UseUpdateDataType = {
+  endpoint: EndpointOptions;
+};
+
+export type UseAddDataType = {
+  endpoint: EndpointOptions;
 };
 
 export type FilterValue = FilterSlugOptions;

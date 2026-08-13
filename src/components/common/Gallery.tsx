@@ -6,30 +6,30 @@ type PmGalleryProps = {
 };
 
 export const Gallery = ({ images }: PmGalleryProps) => {
-  const [galleryImages, setGalleryImages] = useState<string[] | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
-  const openGallery = (images: string[], index: number) => {
-    setGalleryImages(images);
+  const openGallery = (index: number) => {
     setGalleryIndex(index);
+    setIsGalleryOpen(true);
   };
 
   const closeGallery = () => {
-    setGalleryImages(null);
+    setIsGalleryOpen(false);
   };
 
   return (
     <>
-      <ul className="flex gap-2 flex-wrap">
+      <ul className="flex flex-row gap-2">
         {images.map((image, index) => {
           return (
             <li key={`gallery-${image}-${index}`}>
               <img
-                className="w-[200px] h-[200px] object-contain cursor-pointer"
+                className="w-[200px] object-contain cursor-pointer"
                 src={image}
                 alt="img"
                 onClick={() => {
-                  openGallery(images, index);
+                  openGallery(index);
                 }}
               />
             </li>
@@ -37,9 +37,9 @@ export const Gallery = ({ images }: PmGalleryProps) => {
         })}
       </ul>
 
-      {galleryImages && (
+      {isGalleryOpen && (
         <ManagerGallery
-          images={galleryImages}
+          images={images}
           initialIndex={galleryIndex}
           onClose={closeGallery}
         />
