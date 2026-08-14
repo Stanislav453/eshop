@@ -3,12 +3,15 @@ import React from "react";
 type ProductButtonViewType = {
   title: string;
   icon: React.ElementType;
+  onClick?: () => void;
+  active?: boolean;
 };
 
-export const ProductButtonView = ({ title, icon }: ProductButtonViewType) => {
+export const ProductButtonView = ({ title, icon, onClick, active }: ProductButtonViewType) => {
   const Icon = icon;
   return (
     <button
+    onClick={onClick}
       title={title}
       className=" w-full flex justify-center  py-4 hover:bg-gradient-to-r from-blue-600 to-red-600 group  transition-all duration-500
                   relative  after:content-[attr(title)]
@@ -19,7 +22,11 @@ export const ProductButtonView = ({ title, icon }: ProductButtonViewType) => {
     after:transition-opacity after:text-[.7rem]
                 "
     >
-      <Icon className="w-full block text-2xl text-neutral-secondary  group-hover:text-neutral-tertiary transition-all duration-100" />
+      <Icon
+        className={`w-full block text-2xl group-hover:text-neutral-tertiary transition-all duration-100 ${
+          active ? "text-primary-hover" : "text-neutral-secondary"
+        }`}
+      />
     </button>
   );
 };

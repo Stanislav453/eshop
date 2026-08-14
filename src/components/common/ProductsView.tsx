@@ -3,6 +3,8 @@ import { createImageUrl } from "../../utils/createImageUrl";
 import { ProductButtons } from "./ProductButtons";
 import { RatingContainer } from "../ourProducts/RatingContainer";
 import { CountDown } from "../specialOffers/CountDown";
+import { useGetProductDetail } from "../../store/useGetProductDetail";
+import { useWishlist } from "../../store/useWishlist";
 
 export const ProductsView = ({
   id,
@@ -17,6 +19,25 @@ export const ProductsView = ({
   hoverImage,
   countdown,
 }: ProductsViewType) => {
+  const { setproductDetail } = useGetProductDetail();
+  const isLiked = useWishlist((state) =>
+    state.wishlist.some((item) => item.id === id)
+  );
+  const toggleWishlist = useWishlist((state) => state.toggleWishlist);
+
+  const saveProductDetail = () => {
+    setproductDetail({
+      id,
+      title,
+      thumbnail,
+      price,
+      category,
+    });
+  };
+
+  const handleToggleWishlist = () =>
+    toggleWishlist({ id, title, thumbnail, price });
+
   return (
     <li className="w-full border" key={id}>
       <div className="flex items-center flex-col py-8 group">
@@ -67,7 +88,11 @@ export const ProductsView = ({
           </p>
         </div>
       </div>
-      <ProductButtons />
+      <ProductButtons
+        saveProductDetail={saveProductDetail}
+        isLiked={isLiked}
+        onToggleWishlist={handleToggleWishlist}
+      />
     </li>
   );
 };

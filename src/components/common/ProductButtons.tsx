@@ -1,17 +1,37 @@
 import { ProductButtonView } from "./ProductButtonView";
 import { CiHeart, CiRead, CiShoppingCart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
 
-export const ProductButtons = () => {
+type ProductButtonsProps = {
+  saveProductDetail: () => void;
+  isLiked: boolean;
+  onToggleWishlist: () => void;
+};
+
+export const ProductButtons = ({
+  saveProductDetail,
+  isLiked,
+  onToggleWishlist,
+}: ProductButtonsProps) => {
   return (
     <ul className="flex w-full justify-between border-t">
       <li className="flex-1 w-full ">
-        <ProductButtonView title="WISHLIST" icon={CiHeart} />
+        <ProductButtonView
+          onClick={onToggleWishlist}
+          title="WISHLIST"
+          icon={isLiked ? FaHeart : CiHeart}
+          active={isLiked}
+        />
       </li>
       <li className="flex-1 w-full  border-x">
         <ProductButtonView title="ADD TO CART" icon={CiShoppingCart} />
       </li>
       <li className="flex-1 w-full">
-        <ProductButtonView title="QUICKVIEW" icon={CiRead} />
+        <ProductButtonView
+          onClick={() => saveProductDetail()}
+          title="QUICKVIEW"
+          icon={CiRead}
+        />
       </li>
     </ul>
   );
