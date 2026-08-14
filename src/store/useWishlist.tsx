@@ -5,13 +5,14 @@ import type { WishlistStateType } from "../type";
 export const useWishlist = create<WishlistStateType>()(
   persist(
     (set, get) => ({
-      wishlistIds: [],
-      toggleWishlist: (id) => {
-        const { wishlistIds } = get();
+      wishlist: [],
+      toggleWishlist: (item) => {
+        const { wishlist } = get();
+        const isInWishlist = wishlist.some((w) => w.id === item.id);
         set({
-          wishlistIds: wishlistIds.includes(id)
-            ? wishlistIds.filter((wishlistId) => wishlistId !== id)
-            : [...wishlistIds, id],
+          wishlist: isInWishlist
+            ? wishlist.filter((w) => w.id !== item.id)
+            : [...wishlist, item],
         });
       },
     }),

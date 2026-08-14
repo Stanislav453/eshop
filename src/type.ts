@@ -88,9 +88,16 @@ export type ProductDetailStateType = {
   closeproductDetail: () => void;
 };
 
+export type WishlistItemType = {
+  id: string;
+  thumbnail: string;
+  title: string;
+  price: number;
+};
+
 export type WishlistStateType = {
-  wishlistIds: string[];
-  toggleWishlist: (id: string) => void;
+  wishlist: WishlistItemType[];
+  toggleWishlist: (item: WishlistItemType) => void;
 };
 
 export enum FilterSlugOptions {

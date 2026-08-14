@@ -11,7 +11,7 @@ type ShopHeaderUserMenuProps = {
 
 export const ShopHeaderUserMenu = ({ setIsOpen }: ShopHeaderUserMenuProps) => {
   const user = useUser((state) => state.user);
-  const wishlistCount = useWishlist((state) => state.wishlistIds.length);
+  const wishlistCount = useWishlist((state) => state.wishlist.length);
 
   return (
     <div>
@@ -29,7 +29,7 @@ export const ShopHeaderUserMenu = ({ setIsOpen }: ShopHeaderUserMenuProps) => {
             <CiUser className="text-[1.3rem]" />
           </Link>
         )}
-        <Link to="/" className="relative flex items-center">
+        <Link to="/wishlist" className="relative flex items-center">
           <CiHeart className="text-[1.3rem]" />
           {wishlistCount > 0 && (
             <span className="absolute -top-2 -right-2 flex items-center justify-center min-w-[16px] h-[16px] px-1 rounded-full bg-button-brand-primary text-[0.65rem] leading-none text-neutral-tertiary">

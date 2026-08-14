@@ -10,7 +10,8 @@ export const DetailProduct = () => {
   const { productDetail, closeproductDetail } = useGetProductDetail();
   const productId = productDetail?.id;
   const isLiked = useWishlist(
-    (state) => !!productId && state.wishlistIds.includes(productId)
+    (state) =>
+      !!productId && state.wishlist.some((item) => item.id === productId)
   );
   const toggleWishlist = useWishlist((state) => state.toggleWishlist);
 
@@ -57,7 +58,15 @@ export const DetailProduct = () => {
                     Add to card
                   </button>
                   <button
-                    onClick={() => productDetail && toggleWishlist(productDetail.id)}
+                    onClick={() =>
+                      productDetail &&
+                      toggleWishlist({
+                        id: productDetail.id,
+                        title: productDetail.title,
+                        thumbnail: productDetail.thumbnail,
+                        price: productDetail.price,
+                      })
+                    }
                     className={`transition-all duration-300 ${
                       isLiked ? "text-primary-hover" : "text-black hover:text-primary-hover"
                     }`}

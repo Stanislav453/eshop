@@ -20,7 +20,9 @@ export const ProductsView = ({
   countdown,
 }: ProductsViewType) => {
   const { setproductDetail } = useGetProductDetail();
-  const isLiked = useWishlist((state) => state.wishlistIds.includes(id));
+  const isLiked = useWishlist((state) =>
+    state.wishlist.some((item) => item.id === id)
+  );
   const toggleWishlist = useWishlist((state) => state.toggleWishlist);
 
   const saveProductDetail = () => {
@@ -33,7 +35,8 @@ export const ProductsView = ({
     });
   };
 
-  const handleToggleWishlist = () => toggleWishlist(id);
+  const handleToggleWishlist = () =>
+    toggleWishlist({ id, title, thumbnail, price });
 
   return (
     <li className="w-full border" key={id}>
