@@ -4,6 +4,7 @@ import { ProductButtons } from "./ProductButtons";
 import { RatingContainer } from "../ourProducts/RatingContainer";
 import { CountDown } from "../specialOffers/CountDown";
 import { useGetProductDetail } from "../../store/useGetProductDetail";
+import { useWishlist } from "../../store/useWishlist";
 
 export const ProductsView = ({
   id,
@@ -19,16 +20,20 @@ export const ProductsView = ({
   countdown,
 }: ProductsViewType) => {
   const { setproductDetail } = useGetProductDetail();
+  const isLiked = useWishlist((state) => state.wishlistIds.includes(id));
+  const toggleWishlist = useWishlist((state) => state.toggleWishlist);
 
   const saveProductDetail = () => {
     setproductDetail({
+      id,
       title,
       thumbnail,
       price,
       category,
-  })
+    });
+  };
 
-}
+  const handleToggleWishlist = () => toggleWishlist(id);
 
   return (
     <li className="w-full border" key={id}>
@@ -80,7 +85,11 @@ export const ProductsView = ({
           </p>
         </div>
       </div>
-      <ProductButtons saveProductDetail={saveProductDetail}  />
+      <ProductButtons
+        saveProductDetail={saveProductDetail}
+        isLiked={isLiked}
+        onToggleWishlist={handleToggleWishlist}
+      />
     </li>
   );
 };

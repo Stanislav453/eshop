@@ -1,11 +1,18 @@
 import { motion, AnimatePresence } from "motion/react";
 import { IoClose } from "react-icons/io5";
-import { useGetProductDetail } from "../../store/useGetProductDetail";
 import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
+import { useGetProductDetail } from "../../store/useGetProductDetail";
+import { useWishlist } from "../../store/useWishlist";
 import { DetailProductCounter } from "./DetailProductCounter";
 
 export const DetailProduct = () => {
   const { productDetail, closeproductDetail } = useGetProductDetail();
+  const productId = productDetail?.id;
+  const isLiked = useWishlist(
+    (state) => !!productId && state.wishlistIds.includes(productId)
+  );
+  const toggleWishlist = useWishlist((state) => state.toggleWishlist);
 
   return (
     <AnimatePresence>
@@ -49,8 +56,17 @@ export const DetailProduct = () => {
                   <button className="font-bold px-6 py-3 bg-neutral-primary text-white  hover:bg-primary-hover transition-all duration-300">
                     Add to card
                   </button>
-                  <button className="text-black hover:text-primary-hover transition-all duration-300">
-                    <CiHeart className="text-[2rem]" />
+                  <button
+                    onClick={() => productDetail && toggleWishlist(productDetail.id)}
+                    className={`transition-all duration-300 ${
+                      isLiked ? "text-primary-hover" : "text-black hover:text-primary-hover"
+                    }`}
+                  >
+                    {isLiked ? (
+                      <FaHeart className="text-[2rem]" />
+                    ) : (
+                      <CiHeart className="text-[2rem]" />
+                    )}
                   </button>
                 </div>
               </div>

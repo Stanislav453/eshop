@@ -75,6 +75,7 @@ export type PopupStateType = {
 };
 
 export type ProductDetailType = {
+  id: string;
   thumbnail: string;
   title: string;
   price: number;
@@ -85,6 +86,11 @@ export type ProductDetailStateType = {
   productDetail: ProductDetailType | null;
   setproductDetail: (newProductDetail: ProductDetailType) => void;
   closeproductDetail: () => void;
+};
+
+export type WishlistStateType = {
+  wishlistIds: string[];
+  toggleWishlist: (id: string) => void;
 };
 
 export enum FilterSlugOptions {

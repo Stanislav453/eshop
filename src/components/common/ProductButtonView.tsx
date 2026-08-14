@@ -3,10 +3,11 @@ import React from "react";
 type ProductButtonViewType = {
   title: string;
   icon: React.ElementType;
-  onClick?: () => void
+  onClick?: () => void;
+  active?: boolean;
 };
 
-export const ProductButtonView = ({ title, icon, onClick }: ProductButtonViewType) => {
+export const ProductButtonView = ({ title, icon, onClick, active }: ProductButtonViewType) => {
   const Icon = icon;
   return (
     <button
@@ -21,7 +22,11 @@ export const ProductButtonView = ({ title, icon, onClick }: ProductButtonViewTyp
     after:transition-opacity after:text-[.7rem]
                 "
     >
-      <Icon className="w-full block text-2xl text-neutral-secondary  group-hover:text-neutral-tertiary transition-all duration-100" />
+      <Icon
+        className={`w-full block text-2xl group-hover:text-neutral-tertiary transition-all duration-100 ${
+          active ? "text-primary-hover" : "text-neutral-secondary"
+        }`}
+      />
     </button>
   );
 };
