@@ -38,7 +38,7 @@ export const DetailProduct = () => {
                 </button>
               </div>
             </div>
-            <div className="flex w-full flex-1 gap-4 p-6">
+            <div className="flex flex-col sm:flex-row w-full flex-1 gap-4 p-6">
               <div className="border p-3">
                 <img
                   className="w-full max-w-[200px] h-auto"
